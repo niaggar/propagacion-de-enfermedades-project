@@ -1,0 +1,7 @@
+
+La compilacion del codigo se realiza con g++ mediante el archivo makefile.
+
+El archivo makefile contiene las instrucciones de compilacion. Para compilar el codigo se debe ejecutar el comando make en la terminal. El comando make ejecuta las instrucciones del archivo makefile. Para ejecutar el programa ejectura make run despues de compilar. Para limpiar la compilacion anterior ejecutar make clean.
+
+Si se crea un nuevo modulo o archivo .cpp incluirlo dentro del makefile, en la seccion de SRCS para que durante la compilacion el archivo sea tenido en cuenta.
+
