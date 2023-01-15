@@ -23,7 +23,7 @@ LFLAGS =
 LIBS =
 
 # define the C source files
-SRCS = main.cpp ./modules/test1.cpp 
+SRCS = main.cpp ./modules/methods/model.cpp ./modules/methods/Runge4.cpp
 
 # define the C object files
 #
