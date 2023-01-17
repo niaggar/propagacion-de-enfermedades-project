@@ -41,11 +41,7 @@ int main()
         t += dt;
     }
 
-    double max_suceptibles =  Maximum("data.dat");
-    double max_infectados;
-    double max_recuperados;
-    
-    cout << max_suceptibles << max_infectados << max_recuperados << endl;
-
+    double *max_suceptibles = Maximum("data", PopulationType::Infected);
+    cout << max_suceptibles[0] << max_suceptibles[1] << endl;
     return 0;
 }
