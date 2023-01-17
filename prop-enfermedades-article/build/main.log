@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.15)  15 JAN 2023 17:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.15)  16 JAN 2023 17:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -501,29 +501,29 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count316
 \l__pdf_internal_box=\box65
 ) (build/main.aux
-LaTeX Info: Redefining \. on input line 31.
-LaTeX Info: Redefining \% on input line 31.
+LaTeX Info: Redefining \. on input line 30.
+LaTeX Info: Redefining \% on input line 30.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
 
 -- Lines per column: 57 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -545,9 +545,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Redefining \. on input line 82.
-LaTeX Info: Redefining \% on input line 82.
-Package hyperref Info: Link coloring OFF on input line 82.
+LaTeX Info: Redefining \. on input line 79.
+LaTeX Info: Redefining \% on input line 79.
+Package hyperref Info: Link coloring OFF on input line 79.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -557,9 +557,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count323
 )
-LaTeX Info: Redefining \ref on input line 82.
-LaTeX Info: Redefining \pageref on input line 82.
-LaTeX Info: Redefining \nameref on input line 82.
+LaTeX Info: Redefining \ref on input line 79.
+LaTeX Info: Redefining \pageref on input line 79.
+LaTeX Info: Redefining \nameref on input line 79.
  (build/main.out) (build/main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
@@ -567,28 +567,34 @@ LaTeX Info: Redefining \nameref on input line 82.
 \c@lstlisting=\count324
 
 ** WARNING: \and is valid only when in conference or peerreviewca
-modes (line 101).
+modes (line 98).
 
-LaTeX Warning: Citation `nombre_para_citar' on page 1 undefined on input line 167.
+Underfull \hbox (badness 10000) in paragraph at lines 141--144
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 174.
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 164.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 174.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 164.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 174.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 164.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-<Figs/logo UV.png, id=71, 735.74875pt x 284.06125pt>
+Underfull \hbox (badness 10000) in paragraph at lines 164--166
+
+ []
+
+<Figs/logo UV.png, id=52, 735.74875pt x 284.06125pt>
 File: Figs/logo UV.png Graphic file (type png)
 <use Figs/logo UV.png>
-Package pdftex.def Info: Figs/logo UV.png  used on input line 202.
+Package pdftex.def Info: Figs/logo UV.png  used on input line 217.
 (pdftex.def)             Requested size: 113.81102pt x 43.938pt.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
  <./Figs/logo UV.png>]
@@ -596,59 +602,54 @@ Package epstopdf Info: Source file: <Figs//fig.eps>
 (epstopdf)                    date: 2023-01-15 22:16:44
 (epstopdf)                    size: 28515 bytes
 (epstopdf)             Output file: <Figs//fig-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-01-15 17:06:54
+(epstopdf)                    date: 2023-01-16 15:39:09
 (epstopdf)                    size: 9407 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figs//fig-eps-converted-to.pdf Figs//fig.eps>
-(epstopdf)             \includegraphics on input line 210.
-runsystem(repstopdf --outfile=Figs//fig-eps-converted-to.pdf Figs//fig.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <Figs//fig-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-01-15 17:07:12
-(epstopdf)                    size: 9407 bytes.
-<Figs//fig-eps-converted-to.pdf, id=98, 1028.84375pt x 468.75125pt>
+(epstopdf)             \includegraphics on input line 229.
+Package epstopdf Info: Output file is already uptodate.
+<Figs//fig-eps-converted-to.pdf, id=70, 1028.84375pt x 468.75125pt>
 File: Figs//fig-eps-converted-to.pdf Graphic file (type pdf)
 <use Figs//fig-eps-converted-to.pdf>
-Package pdftex.def Info: Figs//fig-eps-converted-to.pdf  used on input line 210.
+Package pdftex.def Info: Figs//fig-eps-converted-to.pdf  used on input line 229.
 (pdftex.def)             Requested size: 236.62909pt x 107.81052pt.
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 247.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 243.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 File: Figs/logo UV.png Graphic file (type png)
 <use Figs/logo UV.png>
-Package pdftex.def Info: Figs/logo UV.png  used on input line 294.
+Package pdftex.def Info: Figs/logo UV.png  used on input line 279.
 (pdftex.def)             Requested size: 113.81102pt x 43.938pt.
  [2pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.294 \end{document}
+l.279 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.294 \end{document}
-                     <./Figs//fig-eps-converted-to.pdf>] (build/main.aux
-LaTeX Info: Redefining \. on input line 31.
-LaTeX Info: Redefining \% on input line 31.
+l.279 \end{document}
+                    
+
+ <./Figs//fig-eps-converted-to.pdf>] (build/main.aux
+LaTeX Info: Redefining \. on input line 30.
+LaTeX Info: Redefining \% on input line 30.
 )
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 08845A07E1FE36B02CF15FEF4BAE5D0D;2079.
+(rerunfilecheck)             Checksum: 3353D91926CDD210F935C2EDAE183E5C;1459.
  ) 
 Here is how much of TeX's memory you used:
- 15125 strings out of 478287
- 244171 string characters out of 5849289
- 571267 words of memory out of 5000000
- 33005 multiletter control sequences out of 15000+600000
- 519404 words of font info for 119 fonts, out of 8000000 for 9000
- 1144 hyphenation exceptions out of 8191
- 68i,14n,76p,683b,422s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on build/main.pdf (2 pages, 175772 bytes).
+ 15081 strings out of 478287
+ 243648 string characters out of 5849289
+ 570123 words of memory out of 5000000
+ 32979 multiletter control sequences out of 15000+600000
+ 512756 words of font info for 112 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 68i,15n,76p,378b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on build/main.pdf (2 pages, 130760 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 137 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 500000)
+ 99 words of extra memory for PDF output out of 10000 (max. 10000000)
 

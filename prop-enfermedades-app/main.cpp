@@ -6,6 +6,8 @@
 #include "modules/modules.h"
 #include "modules/methods/methods.h"
 #include "modules/methods/Runge4.h"
+#include "modules/program/program.h"
+
 
 using namespace std;
 
@@ -39,7 +41,11 @@ int main()
         t += dt;
     }
 
-        
+    double max_suceptibles =  Maximum("data.dat");
+    double max_infectados;
+    double max_recuperados;
+    
+    cout << max_suceptibles << max_infectados << max_recuperados << endl;
 
     return 0;
 }
