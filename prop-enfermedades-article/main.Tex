@@ -29,6 +29,9 @@
 \usepackage{stfloats}
 \usepackage{url}
 \usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta,positioning}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% CREAR Y REESCRIBIR ALGUNOS COMANDOS %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,18 +150,41 @@ que el uso de modelos dinámicos aporte una nueva perspectiva, ya que permite a 
 Además, los modelos utilizados deben dar cuenta de los mecanismos responsables de los patrones observados en la transmisión de una enfermedad contagiosa.
 Este proceso ayuda a identificar, cuantificar, evaluar e implementar políticas de intervención dirigidas a reducir el impacto de la epidemia o incluso brotes pandémicos a través de la reducción del impacto de estos mecanismos.
 
-\subsection{Modelo SIR}
+\subsection{Modelos de Compartimentos}\label{Modelos}
+%%%MOTROS ODELOS SI, SIR, SIS, Y SIRS VACUNACIÓN%%%%%%%%%%%
+Los modelos compartimentales constituyen una técnica para simplificar la modelización matemática que describe el flujo de material en sistemas biológicos \cite{compartimientos}. 
+Estos modelos, se dividen en un número de compartimentos por los que circula el material con flujos de entrada y salida. Este modelo 
+sirve para simular diferentes interacciones, entre ellas una de sus aplicaciones se da en la epidemiología. Por lo general, un modelo 
+epidemiológico de compartimientos, se divide en clases y subclases de individuos, y se estiman tases de transición, para modelar el comportamiento
+en base a un sistema de ecuaciones diferenciales.\\ 
+\newline
+En particular si la población se clasifica, en susceptibles $S$, infectados $R$ y recuperados $R$, se tienen los siguientes tipos de modelos;
+\begin{enumerate}
+  \item \textbf{\textit{SI}} la enfermedad del SIDA es un ejemplo que se ajusta a este modelo \cite{SIDA}, aunque actualmente se está desarrollando modelos mucho mas complejos para tratar esta enfermedad.
+  \item \textbf{\textit{SIR}} Sirve para describir enfermedades virales, como la rubéola o la sarampión \cite{Rubeola}. 
+  \item \textbf{\textit{SIS}} Modela el caso en que los individuos infectados pueden retornar a la clase susceptible, es decir no adquieren inmunidad. El dengue \cite{Dengue} es una enfermedad de este tipo.
+  \item \textbf{\textit{SIRS}} Es un modelo con capacidad de soporte, esto significa que el número de susceptibles no crece indefinidamente, puede modelar la influenza \cite{Influenza}.
+  \item \textbf{\textit{SIRS-V}} Recoge los modelos anteriores, y además modela la capacidad de vacunación sobre la población \cite{Vacunacion}, siendo este modelo uno de los mas completos.
+\end{enumerate}
 
-Según este modelo los individuos de la población
+\begin{figure}[H]
+  \centering  
+  \includegraphics[scale=0.5]{Modelos.png} 
+  \caption{Modelos tipo SI, SIR, SIS y SIRS de compartimentos} 
+  \label{lvdt4} 
+  \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%MMODELO SIR%%%%%%%%%%%%%
+\subsection{Modelo SIR}
+Según este modelo \cite{Anderson} los individuos de la población
 sobre la cual actúa la enfermedad, que en principio se considera constante, se
 clasifican en los siguientes grupos:
 
 \begin{itemize}
-  \item Susceptibles, son aquellos individuos sanos pero que en potencia se pueden
+  \item \textbf{Susceptibles}, son aquellos individuos sanos pero que en potencia se pueden
   enfermar.
-  \item Infectados, son los individuos enfermos.
-  \item Removidos, son aquellos individuos que han muerto por la enfermedad, o
-  que permanecen inmune a la misma sin poder propagarla.
+  \item \textbf{Infectados}, son los individuos enfermos.
+  \item \textbf{Removidos}, son aquellos que se han recuperado, y permanecen inmune a la misma sin poder propagarla.
 \end{itemize}
 
 Se denota por $S(t)$, $I(t)$ y $R(t)$ el número de individuos susceptibles, infectados y removidos respectivamente.
@@ -171,7 +197,7 @@ s(t) = \frac{s(t)}{N},\\
 i(t) = \frac{i(t)}{N},\\
 r(t) = \frac{r(t)}{N},\\
   \end{split}
-\end{equation*}
+\end{equation*} 
 
 Para describir entonces la dinámica de la enfermedad se propone el siguiente sistema:  
 
@@ -179,26 +205,38 @@ Para describir entonces la dinámica de la enfermedad se propone el siguiente si
   \begin{split}
 \frac{ds}{dt} = -bs(t)i(t),\\
 \frac{di}{dt} = bs(t)i(t)-ki(t),\\
-\frac{dr}{dt} = -Ki(t),\\
+\frac{dr}{dt} = -ki(t),\\
   \end{split}
 \end{equation}
 
-Donde $b$ y $k$, son parámetros de la enfermedad, más estrictamente; la tasa de remoción de individuos infectados es constante e igual a $k$, quiere decir, una
-número de miembros infectados pasa a la clase de removidos por unidad de tiempo.\\ 
+Donde $b$ y $k$, son parámetros de la enfermedad, más estrictamente; $k$ es la tasa de remoción de individuos infectados, quiere decir, una
+número de miembros infectados que pasa a la clase de removidos por unidad de tiempo.\\ 
 Mientras $b$ es la tasa de contacto, representa la capacidad de infectar que posee la enfermedad. En el modelo que estamos considerando los parámetros depende de la enfermedad
 particular que se estudié, y por lo tanto, puede también depender de factores sociales y
 de comportamiento. En general es difícil estimar ambas constantes.
 
-%%%DEBO INCLUIR LAS SUPOSICIONES DEL MODELO%%%%
-\subsection{Otros Modelos}
-%%%AQUI DEBO PONER LOS MODELOS SI, SI, Y SIRS Y SISRS VACUNACIÓN.
+%%% SUPOSICIONES DEL MODELO%%%%
+\subsubsection{Hipótesis}
+Este modelo, se sustenta bajo ciertas suposiciones, que limitan la capacidad de aplicación del mismo, lo que lo convierte en un modelo sencillo,
+más sin embargo superar estas suposiciones involucra mejorar el modelo, en la sección \ref{Modelos} se muestran algunos ejemplos. En el caso del modelo \textbf{\textit{SIR}} \ref{SIR}
+sobre el que se trabaja, se parte bajo los siguientes supuestos;
+
+\begin{enumerate}
+  \item  El tamaño de la población $N$ es constante, es decir no se consideran muertes, ni se tiene en cuenta los nacimientos dentro de la población
+  durante la epidemia, esto implica la relación;
+  \begin{equation*}
+  \frac{d(s+i+r)}{dt} = 0
+  \end{equation*}
+  Esta hipótesis se consigue de manera razonable en epidemias de corta duración.
+  \item La enfermedad únicamente se propaga, bajo la ley de acción de masas entre la población de susceptibles e infectados, como
+  tambien se supone que la transmisión se rige por la incidencia común, entre las mismas poblaciones, lo que se refleja en el parámetro
+  $b$, una taza constante de contagios que es proporcional al numero de contactos entre los individuos susceptibles e infectados. 
+  \item La taza de recuperación de individuos infectados $k$, no varia bajo la dinámica de las poblaciones ni de la enfermedad, es decir es una constante.
+\end{enumerate}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% SECCIONES DE MARCO TEÓRICO %%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Metodología}	
-
+%%%%ESTABLECER METOOD DE SOLUCIÓN, CONDICIONES INICIALES, Y PARAMETROS%%%%%%%%%%%%%%%
 
 
 
@@ -269,9 +307,27 @@ $\Omega$ & Omega & \verb|\Omega| \\\hline \hline
 \bibitem{Kermack}
   Kermack, W. O. and McKendrick, A. G. . A Contribution to the Mathematical Theory of Epidemics
 Royal Society of London Proceedings Series A. 1927;115:700–721.
-
-\bibitem{link}
-Overleaf. \url{https://www.overleaf.com/}. Recuperado el 30 de Enero de 2017.
+\bibitem{compartimientos}
+  Driessche P. Wu J. (Eds.). Mathematical Epidemiology (Lecture Notes in Mathematics / Mathematical
+Biosciences Subseries). Springer 2008
+\bibitem{SIDA}
+  Driessche P. Wu J. (Eds.). Mathematical Epidemiology (Lecture Notes in Mathematics / Mathematical
+Biosciences Subseries). Springer 2008.
+\bibitem{Rubeola}
+  Brauer, F. and Castillo-Chávez, C. . Mathematical Models in Population Biology and Epidemiology.
+Springer, New York 2012.
+\bibitem{Dengue}
+  Esteva L. Vargas C.. Analysis of a dengue disease transmission model. Mathemtical Biosciences.
+1998;150:131–151.
+\bibitem{Influenza}
+  Pava E. De. Modelado Matemático de la transmisión de gripe AH1N1. Matemáticas Enseï£¡anza
+Universitaria.. 2010;XVIII:1–10.
+\bibitem{Vacunacion}
+  Hernández, M. E. (2021). Vacunación óptima para un modelo SIRS. Revista De Educación Matemática, 29(2).
+Recuperado a partir de \url{https://revistas.unc.edu.ar/index.php/REM/article/view/10055}.
+\bibitem{Anderson}
+  Anderson R. M.. Population Dynamics of infectious diseases: Theory and Application. Chapman
+Hall, London 1982.
 
 \end{thebibliography}
 %%%%%%%%%%%%%%%%%%%%%%%%%%

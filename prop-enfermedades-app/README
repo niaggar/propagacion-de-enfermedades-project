@@ -5,6 +5,3 @@ El archivo makefile contiene las instrucciones de compilacion. Para compilar el 
 
 Si se crea un nuevo modulo o archivo .cpp incluirlo dentro del makefile, en la seccion de SRCS para que durante la compilacion el archivo sea tenido en cuenta.
 
-Nicolas mi funcion Maximo, esta en program, tengo dos problemas, 
-1) Creo que ya hice que leyera el archivo pero necesito meter otro parametro que permita escoger que columna de datos leer
-2) No se si las direcciones de los archivos este bien, tampoco si mi funcion este bien pues no la pude probar, por un error que no entiendo que me da el parametro char de entrada
