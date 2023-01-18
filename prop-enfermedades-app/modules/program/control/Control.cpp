@@ -2,109 +2,129 @@
 
 Control::Control() {}
 
-void Control::run()
+void Control::Run()
 {
     cout << "Hello World!" << endl;
 }
 
-double Control::getDouble(string prompt)
+double Control::GetDouble(string prompt)
 {
     double input;
 
+    cout << endl;
+    cout << "Prompt: " << prompt << endl;
+
     while (true)
     {
-        cout << prompt << endl;
+        cout << ">>> ";
         cin >> input;
+
         if (cin.fail())
         {
             cin.clear();
-            cin.ignore(1000, ' ');
+            cin.ignore(1000, '\n');
             cout << "Invalid input. Please try again." << endl;
+            cout << endl;
         }
         else
         {
-            cin.ignore(1000, ' ');
+            cin.ignore(1000, '\n');
             break;
         }
     }
 
+    cout << endl;
     return input;
 }
 
-int Control::getIntRange(string prompt, int min, int max)
+int Control::GetIntRange(string prompt, int min, int max)
 {
     int input;
 
+    cout << endl;
+    cout << "Prompt: " << prompt << endl;
+    cout << "Min: " << min << " Max: " << max << endl;
+
     while (true)
     {
-        cout << prompt << endl;
+        cout << ">>> ";
         cin >> input;
-        if (cin.fail())
+        if (cin.fail() || input < min || input > max)
         {
             cin.clear();
-            cin.ignore(1000, ' ');
+            cin.ignore(1000, '\n');
             cout << "Invalid input. Please try again." << endl;
-        }
-        else if (input < min || input > max)
-        {
-            cin.clear();
-            cin.ignore(1000, ' ');
-            cout << "Input outside the bounds. Please try again." << endl;
+            cout << endl;
         }
         else
         {
-            cin.ignore(1000, ' ');
+            cin.ignore(1000, '\n');
             break;
         }
     }
 
+    cout << endl;
     return input;
 }
 
-bool Control::getBool(string prompt)
-{
-    bool input;
-
-    while (true)
-    {
-        cout << prompt << endl;
-        cin >> input;
-        if (cin.fail())
-        {
-            cin.clear();
-            cin.ignore(1000, ' ');
-            cout << "Invalid input. Please try again." << endl;
-        }
-        else
-        {
-            cin.ignore(1000, ' ');
-            break;
-        }
-    }
-
-    return input;
-}
-
-string Control::getString(string prompt)
+bool Control::GetBool(string prompt)
 {
     string input;
 
+    cout << endl;
+    cout << "Prompt: " << prompt << endl;
+
     while (true)
     {
-        cout << prompt << endl;
+        cout << "True or False?" << endl << ">>> ";
         cin >> input;
-        if (cin.fail())
+
+        if (input == "true" || input == "True" || input == "TRUE")
         {
-            cin.clear();
-            cin.ignore(1000, ' ');
-            cout << "Invalid input. Please try again." << endl;
+            cin.ignore(1000, '\n');
+            return true;
+        }
+        else if (input == "false" || input == "False" || input == "FALSE")
+        {
+            cin.ignore(1000, '\n');
+            return false;
         }
         else
         {
-            cin.ignore(1000, ' ');
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Invalid input. Please try again." << endl;
+            cout << endl;
+        }
+    }
+}
+
+string Control::GetString(string prompt)
+{
+    string input;
+
+    cout << endl;
+    cout << "Prompt: " << prompt << endl;
+
+    while (true)
+    {
+        cout << ">>> ";
+        cin >> input;
+
+        if (input == "")
+        {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Invalid input. Please try again." << endl;
+            cout << endl;
+        }
+        else
+        {
+            cin.ignore(1000, '\n');
             break;
         }
     }
-
+    
+    cout << endl;
     return input;
 }

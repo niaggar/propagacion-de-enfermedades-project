@@ -11,27 +11,27 @@ public:
     Control();
 
     /// @brief Metodo que se encarga de la ejecucion del programa
-    void run();
+    void Run();
 
     /// @brief Obtener un double por consola
     /// @param prompt Mensaje a mostrar
     /// @return Double introducido por el usuario
-    double getDouble(string);
+    double GetDouble(string);
 
     /// @brief Obtener un int por consola entre un rango dado
     /// @param prompt Mensaje a mostrar
     /// @param min Valor minimo
     /// @param max Valor maximo
     /// @return Int introducido por el usuario entre el rango
-    int getIntRange(string, int, int);
+    int GetIntRange(string, int, int);
 
     /// @brief Obtener un bool por consola
     /// @param prompt Mensaje a mostrar
     /// @return Bool introducido por el usuario
-    bool getBool(string);
+    bool GetBool(string);
 
     /// @brief Obtener un string por consola
     /// @param prompt Mensaje a mostrar
     /// @return String introducido por el usuario
-    string getString(string);
+    string GetString(string);
 };
