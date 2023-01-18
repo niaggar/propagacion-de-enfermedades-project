@@ -23,7 +23,7 @@ LFLAGS =
 LIBS =
 
 # define the C source files
-SRCS = main.cpp ./modules/methods/model.cpp ./modules/methods/Runge4.cpp ./modules/findMax.cpp
+SRCS = 	main.cpp ./modules/methods/model.cpp ./modules/methods/Runge4.cpp ./modules/program/FindMax.cpp ./modules/program/control/Control.cpp ./modules/program/ReadData.cpp
 
 # define the C object files
 #

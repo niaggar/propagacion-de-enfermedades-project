@@ -3,7 +3,6 @@
 #include <string>
 #include <cmath>
 
-#include "modules/modules.h"
 #include "modules/methods/methods.h"
 #include "modules/methods/Runge4.h"
 #include "modules/program/program.h"
@@ -42,6 +41,6 @@ int main()
     }
 
     double *max_suceptibles = Maximum("data", PopulationType::Infected);
-    cout << max_suceptibles[0] << max_suceptibles[1] << endl;
+    cout << max_suceptibles[0] << " " << max_suceptibles[1] << endl;
     return 0;
 }
