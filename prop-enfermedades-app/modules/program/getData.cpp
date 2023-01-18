@@ -1,25 +1,26 @@
-#include <iostream>
-#include <fstream>
 #include <string>
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <fstream>
 #include <sstream>
 #include <stdio.h>
-#include "modules.h"
+#include "../enums/enums.h"
 
 using namespace std;
 
-double *Maximum(string name_data, PopulationType p = PopulationType::Infected)
+double *GetData(string fileName, PopulationType populationType)
 {
     ifstream file;
-    file.open("./data/" + name_data + ".dat");
-
-    int col = p;
-    double maximum;
-    double day;
+    list<double> data;
     string line_readed = "";
 
-    if (!file)
-        cout << "Error al abrir el fichero" << endl;
+    file.open("./data/" + fileName + ".dat");
 
+    if (!file)
+    {
+        cout << "Error al abrir el fichero" << endl;
+    }
     else
     {
         while (file)
@@ -34,17 +35,14 @@ double *Maximum(string name_data, PopulationType p = PopulationType::Infected)
             while (isstream >> palabra)
             {
                 resultado[count] = stod(palabra);
-                if (resultado[col] > maximum)
-                    {
-                    maximum = resultado[col];
-                    day = resultado[0];
-                    }
-                count++;
             }
-            
+
+            data.push_back(resultado[populationType]);
         }
+
         file.close();
     }
 
-    return new double[2]{maximum, day};
+    double *data_array = new double[data.size()];
+    copy(data.begin(), data.end(), data_array);
 }
