@@ -25,8 +25,8 @@ int main()
     Runge4 *runge4 = new Runge4();
 
     model->SetParameters(0.5, 0.1);
+    
     runge4->SetModel(model);
-
     runge4->DoMethod(t, dt, s, i, r, tmax);
     
     double **data = runge4->GetResult();

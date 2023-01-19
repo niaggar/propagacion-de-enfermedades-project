@@ -23,7 +23,7 @@ double SirsModel::Infected(double t, double s, double i, double r)
     return 0;
 }
 
-double SirsModel::Recovered(double t, double s, double i, double r)
+double SirsModel::Removed(double t, double s, double i, double r)
 {
     return 0;
 }

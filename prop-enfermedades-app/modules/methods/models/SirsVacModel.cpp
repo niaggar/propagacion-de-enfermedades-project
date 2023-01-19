@@ -24,7 +24,7 @@ double SirsVacModel::Infected(double t, double s, double i, double r)
     return 0;
 }
 
-double SirsVacModel::Recovered(double t, double s, double i, double r)
+double SirsVacModel::Removed(double t, double s, double i, double r)
 {
     return 0;
 }

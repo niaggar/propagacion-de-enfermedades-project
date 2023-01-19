@@ -18,7 +18,7 @@ double SirModel::Infected(double t, double s, double i, double r)
     return b * s * i - k * i;
 }
 
-double SirModel::Recovered(double t, double s, double i, double r)
+double SirModel::Removed(double t, double s, double i, double r)
 {
     return k * i;
 }
