@@ -18,7 +18,7 @@ double Model::Infected(double t, double s, double i, double r)
     return 0.0;
 }
 
-double Model::Recovered(double t, double s, double i, double r)
+double Model::Removed(double t, double s, double i, double r)
 {
     return 0.0;
 }
