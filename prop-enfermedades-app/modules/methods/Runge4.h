@@ -1,4 +1,7 @@
-#include <functional>
+#ifndef RUNGE4_H
+#define RUNGE4_H
+
+#include "models/Model.h"
 
 using namespace std;
 
@@ -9,11 +12,12 @@ private:
     double k21, k22, k23, k24;
     double k31, k32, k33, k34;
     double b, k;
-    function<double(double, double, double, double, double, double)> f1;
-    function<double(double, double, double, double, double, double)> f2;
-    function<double(double, double, double, double, double, double)> f3;
+    Model *model;
 
 public:
-    Runge4(double, double, function<double(double, double, double, double, double, double)>, function<double(double, double, double, double, double, double)>, function<double(double, double, double, double, double, double)>);
+    Runge4();
+    void SetModel(Model *);
     double *Calc(double, double, double, double, double);
 };
+
+#endif

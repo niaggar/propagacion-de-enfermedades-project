@@ -1,3 +1,6 @@
+#ifndef CONTROL_H
+#define CONTROL_H
+
 #include <iostream>
 #include <string>
 
@@ -35,3 +38,5 @@ public:
     /// @return String introducido por el usuario
     string GetString(string);
 };
+
+#endif
