@@ -41,3 +41,48 @@ double *Runge4::Calc(double t, double dt, double s, double i, double r)
 
     return result;
 }
+
+void Runge4::DoMethod(double t, double dt, double s, double i, double r, double tmax)
+{
+    int n = (int)(tmax / dt);
+    double **result = new double *[4];
+
+    for (int i = 0; i < 4; i++)
+    {
+        result[i] = new double[n];
+    }
+
+    int j = 0;
+    result[0][j] = t;
+    result[1][j] = s;
+    result[2][j] = i;
+    result[3][j] = r;
+
+    while (t < tmax)
+    {
+        double *calc = Calc(t, dt, s, i, r);
+        t += dt;
+        s = calc[0];
+        i = calc[1];
+        r = calc[2];
+
+        j++;
+        result[0][j] = t;
+        result[1][j] = s;
+        result[2][j] = i;
+        result[3][j] = r;
+    }
+
+    this->result = result;
+    this->length = n;
+}
+
+double **Runge4::GetResult()
+{
+    return result;
+}
+
+double Runge4::GetLength()
+{
+    return length;
+}

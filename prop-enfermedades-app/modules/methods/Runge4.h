@@ -13,11 +13,16 @@ private:
     double k31, k32, k33, k34;
     double b, k;
     Model *model;
-
+    double **result;
+    double length;
+    double *Calc(double, double, double, double, double);
 public:
     Runge4();
     void SetModel(Model *);
-    double *Calc(double, double, double, double, double);
+    void DoMethod(double, double, double, double, double, double);
+
+    double **GetResult();
+    double GetLength();
 };
 
 #endif

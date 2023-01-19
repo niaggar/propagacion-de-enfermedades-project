@@ -27,23 +27,12 @@ int main()
     model->SetParameters(0.5, 0.1);
     runge4->SetModel(model);
 
-
-
-    ofstream file;
-    file.open("./data/data.dat");
-
-    while (t < tmax)
-    {
-        double *result = runge4->Calc(t, dt, s, i, r);
-
-        s = result[0];
-        i = result[1];
-        r = result[2];
-
-        file << t << " " << s << " " << i << " " << r << endl;
+    runge4->DoMethod(t, dt, s, i, r, tmax);
     
-        t += dt;
-    }
+    double **data = runge4->GetResult();
+    int n = runge4->GetLength();
+
+    WriteData("data", data, n);
 
     double *max_suceptibles = Maximum("data", PopulationType::Infected);
     cout << max_suceptibles[0] << " " << max_suceptibles[1] << endl;
