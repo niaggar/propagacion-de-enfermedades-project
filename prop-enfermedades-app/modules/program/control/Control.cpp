@@ -37,6 +37,36 @@ double Control::GetDouble(string prompt)
     return input;
 }
 
+int Control::GetInt(string prompt)
+{
+    int input;
+
+    cout << endl;
+    cout << "Prompt: " << prompt << endl;
+
+    while (true)
+    {
+        cout << ">>> ";
+        cin >> input;
+
+        if (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Invalid input. Please try again." << endl;
+            cout << endl;
+        }
+        else
+        {
+            cin.ignore(1000, '\n');
+            break;
+        }
+    }
+
+    cout << endl;
+    return input;
+}
+
 int Control::GetIntRange(string prompt, int min, int max)
 {
     int input;

@@ -16,7 +16,7 @@ void WriteData(string fileName, double **data, int size)
 
     for (int i = 0; i < size; i++)
     {
-        file << data[0][i] << " " << data[1][i] << " " << data[2][i] << endl;
+        file << data[0][i] << " " << data[1][i] << " " << data[2][i] << " " << data[3][i] << endl;
     }
 
     file.close();

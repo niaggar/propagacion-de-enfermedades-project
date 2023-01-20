@@ -5,6 +5,7 @@
 
 #include "modules/methods/Runge4.h"
 #include "modules/program/program.h"
+#include "modules/program/images/Images.h"
 #include "modules/program/control/Control.h"
 #include "modules/methods/models/SirModel.h"
 
@@ -12,12 +13,19 @@ using namespace std;
 
 int main()
 {
-    double dt = 0.1;
-    double tmax = 100.0;
-    double t = 0.0;
-    double s = 0.99;
-    double i = 0.01;
-    double r = 0.0;
+    Control *control = new Control();
+    double dt = control->GetDouble("Cual es el tamano de paso? (dt)");
+    double tmax = control->GetDouble("Cual es el tiempo maximo? (dias)");
+    double t = control->GetDouble("Cual es el tiempo inicial? (dias)");
+    
+    double S = control->GetInt("Cual es la poblacion inicial SUCEPTIBLE? (# personas)");
+    double I = control->GetDouble("Cual es la poblacion inicial INFECTADA? (# personas)");
+    double R = control->GetDouble("Cual es la poblacion inicial REMOVIDA? (# personas)");
+
+    int N = S + I + R;
+    double s = S / N;
+    double i = I / N;
+    double r = R / N;    
 
 
 
@@ -36,6 +44,12 @@ int main()
 
     double *max_suceptibles = Maximum("data", PopulationType::Infected);
     cout << max_suceptibles[0] << " " << max_suceptibles[1] << endl;
+
+
+    Images *images = new Images();
+    images->GenerateBasicPlot("./data/data.dat", "./img/result/data1.png");
+    images->GeneratePanelesPlot("./data/data.dat", "./img/result/data2.png");
+
 
     return 0;
 }
