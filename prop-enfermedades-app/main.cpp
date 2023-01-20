@@ -51,6 +51,7 @@ int main()
 
     WriteData("dataSir", dataSir, n_1);
 
+<<<<<<< HEAD
     //SIRS MODEL--------------------
 
     SirsModel *model_2 = new SirsModel();
@@ -91,6 +92,10 @@ int main()
 
     double *max_suceptibles_SirsVac = Maximum("dataSirsVac", PopulationType::Infected);
     cout << "Max suceptibles SirVac" << " " << max_suceptibles_SirsVac[0] << " " << max_suceptibles_SirsVac[1] << endl;
+=======
+    double *max_suceptibles = Maximum(new double*[3] { data[0], data[2], new double[1] { n * 1.0 } }, PopulationType::Infected);
+    cout << max_suceptibles[0] << " " << max_suceptibles[1] << endl;
+>>>>>>> 80315c32f421cec20220a5e4f26fb4250b12332d
 
 
     //CREATE IMAGES-------------------------------------------------------

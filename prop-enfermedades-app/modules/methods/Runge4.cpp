@@ -44,7 +44,7 @@ double *Runge4::Calc(double t, double dt, double s, double i, double r)
 
 void Runge4::DoMethod(double t, double dt, double s, double i, double r, double tmax)
 {
-    int n = (int)(tmax / dt);
+    int n = (int)((tmax - t) / dt);
     double **result = new double *[4];
 
     for (int i = 0; i < 4; i++)

@@ -30,3 +30,22 @@ double *Maximum(string name_data, PopulationType p = PopulationType::Infected)
 
     return new double[2] { maximum, day };
 }
+
+double *Maximum(double ** populationValues, PopulationType p = PopulationType::Infected)
+{
+    double maximum;
+    double day;
+    
+    int len = populationValues[2][0];
+
+    for (int i = 0; i < len; i++)
+    {
+        if (populationValues[1][i] > maximum)
+        {
+            maximum = populationValues[1][i];
+            day = populationValues[0][i];
+        }
+    }
+
+    return new double[2] { maximum, day };
+}

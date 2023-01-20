@@ -9,5 +9,6 @@ using namespace std;
 void WriteData(string, double **, int);
 double **ReadData(string, PopulationType);
 double *Maximum(string a, PopulationType b);
+double *Maximum(double **, PopulationType b);
 
 #endif
