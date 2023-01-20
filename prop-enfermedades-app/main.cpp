@@ -42,7 +42,7 @@ int main()
 
     WriteData("data", data, n);
 
-    double *max_suceptibles = Maximum("data", PopulationType::Infected);
+    double *max_suceptibles = Maximum(new double*[3] { data[0], data[2], new double[1] { n * 1.0 } }, PopulationType::Infected);
     cout << max_suceptibles[0] << " " << max_suceptibles[1] << endl;
 
 
