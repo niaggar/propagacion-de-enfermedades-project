@@ -13,12 +13,6 @@
 
 using namespace std;
 
-double U(double t)
-{
-    return 0.02; 
-    // return -(1 / (t + 1)) + 0.4; //AIUDA NO SE DONDE PONER ESTA FUNCION PARA QUE CORRA ESTO
-}
-
 int main()
 {
     Control *control = new Control();
@@ -39,6 +33,7 @@ int main()
     //SIR MODEL---------------------
 
     SirModel *model_1 = new SirModel();
+    model_1->SetN(N);
     Runge4 *runge4_1 = new Runge4();
 
     model_1->SetParameters(0.5, 0.1);
@@ -51,16 +46,16 @@ int main()
 
     WriteData("dataSir", dataSir, n_1);
 
-<<<<<<< HEAD
     //SIRS MODEL--------------------
 
     SirsModel *model_2 = new SirsModel();
+    model_2->SetN(N);
     Runge4 *runge4_2 = new Runge4();
 
-    model_2->SetParameters(150, 8000, 0.0023, 0.21, 0.1, 0.4, 0.08);
+    model_2->SetParameters(0.0625 , 0.0026, 0.5673);
     
     runge4_2->SetModel(model_2);
-    runge4_2->DoMethod(t, dt, s, i, r, tmax);
+    runge4_2->DoMethod(t, dt, S, I, R, tmax);
     
     double **dataSirs = runge4_2->GetResult();
     int n_2 = runge4_2->GetLength();
@@ -70,12 +65,13 @@ int main()
    //SIRS-VAC MODEL--------------------
 
     SirsVacModel *model_3 = new SirsVacModel();
+    model_3->SetN(N);
     Runge4 *runge4_3 = new Runge4();
 
-    model_3->SetParameters(150, 8000, 0.0023, 0.21, 0.1, 0.4, 0.08, U);
+    model_3->SetParameters(0.0625, 0.0026, 0.5673, 0.05, 0.04);
     
     runge4_3->SetModel(model_3);
-    runge4_3->DoMethod(t, dt, s, i, r, tmax);
+    runge4_3->DoMethod(t, dt, S, I, R, tmax);
     
     double **dataSirsVac = runge4_3->GetResult();
     int n_3 = runge4_3->GetLength();
@@ -92,10 +88,6 @@ int main()
 
     double *max_suceptibles_SirsVac = Maximum("dataSirsVac", PopulationType::Infected);
     cout << "Max suceptibles SirVac" << " " << max_suceptibles_SirsVac[0] << " " << max_suceptibles_SirsVac[1] << endl;
-=======
-    double *max_suceptibles = Maximum(new double*[3] { data[0], data[2], new double[1] { n * 1.0 } }, PopulationType::Infected);
-    cout << max_suceptibles[0] << " " << max_suceptibles[1] << endl;
->>>>>>> 80315c32f421cec20220a5e4f26fb4250b12332d
 
 
     //CREATE IMAGES-------------------------------------------------------

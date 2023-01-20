@@ -5,9 +5,14 @@
 class Model
 {
     private:
-        /* data */
+
+    protected:
+        int N;
     public:
         Model();
+        Model(int);
+
+        void SetN(int);
 
         virtual double Susceptible(double t, double s, double i, double r);
         virtual double Infected(double t, double s, double i, double r);

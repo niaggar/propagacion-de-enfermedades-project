@@ -2,31 +2,28 @@
 
 SirsVacModel::SirsVacModel() {}
 
-void SirsVacModel::SetParameters(double m, double K, double b, double d, double v, double e, double g, function<double(double)> u)
+void SirsVacModel::SetParameters(double m, double b, double v, double g1, double g2)
 {
     this->m = m;
-    this->K = K;
     this->b = b;
-    this->d = d;
     this->v = v;
-    this->e = e;
-    this->g = g;
-    this->u = u;
+    this->g1 = g1;
+    this->g2 = g2;
 }
 
 double SirsVacModel::Susceptible(double t, double s, double i, double r)
 {
-    return -m * (1 - s/K) - b * s *i - (d + u(t)) * s + v * r;
+    return (-(b * s * i) - (m * s) + (m * N) - (g1 * (m * N)) - (g2 * s));
 }
 
 double SirsVacModel::Infected(double t, double s, double i, double r)
 {
-    return b * s * i - (d + e + g) * i;
+    return ((b * s * i) - (v * i) - (m * i));
 }
 
 double SirsVacModel::Removed(double t, double s, double i, double r)
 {
-    return g * i - (d + v) * r + u(t) * s;
+    return ((v * i) - (m * r) + g1 * (m *N) + (g2 * s));
 }
 
 double SirsVacModel::GetM()
@@ -34,19 +31,9 @@ double SirsVacModel::GetM()
     return this->m;
 }
 
-double SirsVacModel::GetK()
-{
-    return this->K;
-}
-
 double SirsVacModel::GetB()
 {
     return this->b;
-}
-
-double SirsVacModel::GetD()
-{
-    return this->d;
 }
 
 double SirsVacModel::GetV()
@@ -54,12 +41,13 @@ double SirsVacModel::GetV()
     return this->v;
 }
 
-double SirsVacModel::GetE()
+double SirsVacModel::GetG1()
 {
-    return this->e;
+    return this->g1;
 }
 
-double SirsVacModel::GetG()
+double SirsVacModel::GetG2()
 {
-    return this->g;
+    return this->g2;
 }
+
