@@ -20,7 +20,7 @@ class SirsModel : public Model
         /// @brief epsilon, tasa de muerte por la enfermedad
         double e;
         /// @brief gama, proporcion de infectados que se transforman en removidos
-        double r;
+        double g;
     public:
         SirsModel();
 
@@ -29,10 +29,10 @@ class SirsModel : public Model
         /// @param K k, capacidad de soporte de la poblacion suceptible
         /// @param b beta, capacidad de infeccion de la enfermedad
         /// @param d delta, tasa de muerte natural de la poblacion
-        /// @param v v, proporcio de removidos que se transforman en susceptibles
+        /// @param v v, proporcion de removidos que se transforman en susceptibles
         /// @param e epsilon, tasa de muerte por la enfermedad
-        /// @param r gama, proporcion de infectados que se transforman en removidos
-        void SetParameters(double m, double K, double b, double d, double v, double e, double r);
+        /// @param g gama, proporcion de infectados que se transforman en removidos
+        void SetParameters(double m, double K, double b, double d, double v, double e, double g);
 
         /// @brief Ecuacion diferencial que representa la poblacion susceptible
         /// @param t tiempo actual
@@ -69,7 +69,7 @@ class SirsModel : public Model
         /// @brief Obtiene el valor de: tasa de muerte por la enfermedad
         double GetE();
         /// @brief Obtiene el valor de: proporcion de infectados que se transforman en removidos
-        double GetR();
+        double GetG();
 };
 
 #endif

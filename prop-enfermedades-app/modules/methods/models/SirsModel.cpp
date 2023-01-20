@@ -2,7 +2,7 @@
 
 SirsModel::SirsModel() {}
 
-void SirsModel::SetParameters(double m, double K, double b, double d, double v, double e, double r)
+void SirsModel::SetParameters(double m, double K, double b, double d, double v, double e, double g)
 {
     this->m = m;
     this->K = K;
@@ -10,22 +10,22 @@ void SirsModel::SetParameters(double m, double K, double b, double d, double v, 
     this->d = d;
     this->v = v;
     this->e = e;
-    this->r = r;
+    this->g = g;
 }
 
 double SirsModel::Susceptible(double t, double s, double i, double r)
 {
-    return 0;
+    return -m * (1 - s/K) - b * s *i - d * s + v * r;
 }
 
 double SirsModel::Infected(double t, double s, double i, double r)
 {
-    return 0;
+    return b * s * i - (d + e) - g * i;
 }
 
 double SirsModel::Removed(double t, double s, double i, double r)
 {
-    return 0;
+    return g * i - d - v * r;
 }
 
 double SirsModel::GetM()
@@ -58,7 +58,7 @@ double SirsModel::GetE()
     return this->e;
 }
 
-double SirsModel::GetR()
+double SirsModel::GetG()
 {
-    return this->r;
+    return this->g;
 }

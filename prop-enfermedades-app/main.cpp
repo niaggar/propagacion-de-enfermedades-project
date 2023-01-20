@@ -8,8 +8,16 @@
 #include "modules/program/images/Images.h"
 #include "modules/program/control/Control.h"
 #include "modules/methods/models/SirModel.h"
+#include "modules/methods/models/SirsModel.h"
+#include "modules/methods/models/SirsVacModel.h"
 
 using namespace std;
+
+double U(double t)
+{
+    return 0.02; 
+    // return -(1 / (t + 1)) + 0.4; //AIUDA NO SE DONDE PONER ESTA FUNCION PARA QUE CORRA ESTO
+}
 
 int main()
 {
@@ -28,28 +36,78 @@ int main()
     double r = R / N;    
 
 
+    //SIR MODEL---------------------
 
-    SirModel *model = new SirModel();
-    Runge4 *runge4 = new Runge4();
+    SirModel *model_1 = new SirModel();
+    Runge4 *runge4_1 = new Runge4();
 
-    model->SetParameters(0.5, 0.1);
+    model_1->SetParameters(0.5, 0.1);
     
-    runge4->SetModel(model);
-    runge4->DoMethod(t, dt, s, i, r, tmax);
+    runge4_1->SetModel(model_1);
+    runge4_1->DoMethod(t, dt, s, i, r, tmax);
     
-    double **data = runge4->GetResult();
-    int n = runge4->GetLength();
+    double **dataSir = runge4_1->GetResult();
+    int n_1 = runge4_1->GetLength();
 
-    WriteData("data", data, n);
+    WriteData("dataSir", dataSir, n_1);
 
-    double *max_suceptibles = Maximum("data", PopulationType::Infected);
-    cout << max_suceptibles[0] << " " << max_suceptibles[1] << endl;
+    //SIRS MODEL--------------------
+
+    SirsModel *model_2 = new SirsModel();
+    Runge4 *runge4_2 = new Runge4();
+
+    model_2->SetParameters(150, 8000, 0.0023, 0.21, 0.1, 0.4, 0.08);
+    
+    runge4_2->SetModel(model_2);
+    runge4_2->DoMethod(t, dt, s, i, r, tmax);
+    
+    double **dataSirs = runge4_2->GetResult();
+    int n_2 = runge4_2->GetLength();
+
+    WriteData("dataSirs", dataSirs, n_2);
+
+   //SIRS-VAC MODEL--------------------
+
+    SirsVacModel *model_3 = new SirsVacModel();
+    Runge4 *runge4_3 = new Runge4();
+
+    model_3->SetParameters(150, 8000, 0.0023, 0.21, 0.1, 0.4, 0.08, U);
+    
+    runge4_3->SetModel(model_3);
+    runge4_3->DoMethod(t, dt, s, i, r, tmax);
+    
+    double **dataSirsVac = runge4_3->GetResult();
+    int n_3 = runge4_3->GetLength();
+
+    WriteData("dataSirsVac", dataSirsVac, n_3);
+
+    //FIND MAX------------------------------------------------------------
+
+    double *max_suceptibles_Sir = Maximum("dataSir", PopulationType::Infected);
+    cout << "Max suceptibles Sir" << " " << max_suceptibles_Sir[0] << " " << max_suceptibles_Sir[1] << endl;
+
+    double *max_suceptibles_Sirs = Maximum("dataSirs", PopulationType::Infected);
+    cout << "Max suceptibles Sirs" << " " << max_suceptibles_Sirs[0] << " " << max_suceptibles_Sirs[1] << endl;
+
+    double *max_suceptibles_SirsVac = Maximum("dataSirsVac", PopulationType::Infected);
+    cout << "Max suceptibles SirVac" << " " << max_suceptibles_SirsVac[0] << " " << max_suceptibles_SirsVac[1] << endl;
 
 
-    Images *images = new Images();
-    images->GenerateBasicPlot("./data/data.dat", "./img/result/data1.png");
-    images->GeneratePanelesPlot("./data/data.dat", "./img/result/data2.png");
+    //CREATE IMAGES-------------------------------------------------------
 
+    Images *images_1 = new Images();
+    images_1->GenerateBasicPlot("./data/dataSir.dat", "./img/result/Sirdata1.png");
+    images_1->GeneratePanelesPlot("./data/dataSir.dat", "./img/result/Sirdata2.png");
+
+    Images *images_2 = new Images();
+    images_2->GenerateBasicPlot("./data/dataSirs.dat", "./img/result/Sirsdata1.png");
+    images_2->GeneratePanelesPlot("./data/dataSirs.dat", "./img/result/Sirsdata2.png");
+
+    Images *images_3 = new Images();
+    images_3->GenerateBasicPlot("./data/dataSirsVac.dat", "./img/result/SirsVacdata1.png");
+    images_3->GeneratePanelesPlot("./data/dataSirsVac.dat", "./img/result/SirsVacdata2.png");
+
+    //---------------------------------------------------------------------
 
     return 0;
 }
