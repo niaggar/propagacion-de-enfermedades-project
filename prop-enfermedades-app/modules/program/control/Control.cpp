@@ -2,16 +2,30 @@
 
 Control::Control() {}
 
+
+
+
+
+
 void Control::Run()
 {
-    cout << "Hello World!" << endl;
+    string projectName = GetProjectName();
+    ModelType modelType = GetModelType();
+    vector<double> constants = GetConstants(modelType);
+    vector<double> initialValues = GetInitialValues();
 }
+
+
+
+
+
+
+
 
 double Control::GetDouble(string prompt)
 {
     double input;
 
-    cout << endl;
     cout << "Prompt: " << prompt << endl;
 
     while (true)
@@ -41,7 +55,6 @@ int Control::GetInt(string prompt)
 {
     int input;
 
-    cout << endl;
     cout << "Prompt: " << prompt << endl;
 
     while (true)
@@ -71,7 +84,6 @@ int Control::GetIntRange(string prompt, int min, int max)
 {
     int input;
 
-    cout << endl;
     cout << "Prompt: " << prompt << endl;
     cout << "Min: " << min << " Max: " << max << endl;
 
@@ -101,7 +113,6 @@ bool Control::GetBool(string prompt)
 {
     string input;
 
-    cout << endl;
     cout << "Prompt: " << prompt << endl;
 
     while (true)
@@ -133,7 +144,6 @@ string Control::GetString(string prompt)
 {
     string input;
 
-    cout << endl;
     cout << "Prompt: " << prompt << endl;
 
     while (true)

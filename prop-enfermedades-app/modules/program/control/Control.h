@@ -3,6 +3,11 @@
 
 #include <iostream>
 #include <string>
+#include <dirent.h>
+#include <stdio.h>
+#include <cstring>
+#include <vector>
+#include "../../enums/enums.h"
 
 using namespace std;
 
@@ -10,8 +15,15 @@ using namespace std;
 class Control
 {
     private:
+        vector<string> GetFoldersName();
+        void PrintFoldersName(vector<string>);
     public:
         Control();
+
+        string GetProjectName();
+        ModelType GetModelType();
+        vector<double> GetInitialValues();
+        vector<double> GetConstants(ModelType);
 
         /// @brief Metodo que se encarga de la ejecucion del programa
         void Run();
