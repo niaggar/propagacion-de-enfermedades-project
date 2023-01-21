@@ -10,12 +10,12 @@ void SirModel::SetParameters(double b, double k)
 
 double SirModel::Susceptible(double t, double s, double i, double r)
 {
-    return -b * s * i;
+    return -(b * s * i);
 }
 
 double SirModel::Infected(double t, double s, double i, double r)
 {
-    return b * s * i - k * i;
+    return (b * s * i) - (k * i);
 }
 
 double SirModel::Removed(double t, double s, double i, double r)

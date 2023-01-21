@@ -36,10 +36,12 @@ int main()
     model_1->SetN(N);
     Runge4 *runge4_1 = new Runge4();
 
-    model_1->SetParameters(0.5, 0.1);
+    model_1->SetParameters(0.5 / N, 0.1);
     
+    cout << 0.5 / N << " " << 0.1 << endl;
+
     runge4_1->SetModel(model_1);
-    runge4_1->DoMethod(t, dt, s, i, r, tmax);
+    runge4_1->DoMethod(t, dt, S, I, R, tmax);
     
     double **dataSir = runge4_1->GetResult();
     int n_1 = runge4_1->GetLength();
@@ -52,7 +54,7 @@ int main()
     model_2->SetN(N);
     Runge4 *runge4_2 = new Runge4();
 
-    model_2->SetParameters(0.0625 , 0.0026, 0.5673);
+    model_2->SetParameters(0.0625 , 0.5 / N, 0.1);
     
     runge4_2->SetModel(model_2);
     runge4_2->DoMethod(t, dt, S, I, R, tmax);
@@ -68,7 +70,7 @@ int main()
     model_3->SetN(N);
     Runge4 *runge4_3 = new Runge4();
 
-    model_3->SetParameters(0.0625, 0.0026, 0.5673, 0.05, 0.04);
+    model_3->SetParameters(0.0625, 0.5 / N, 0.1, 0.05, 0.04);
     
     runge4_3->SetModel(model_3);
     runge4_3->DoMethod(t, dt, S, I, R, tmax);
