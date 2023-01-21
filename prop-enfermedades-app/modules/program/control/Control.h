@@ -25,10 +25,15 @@ using namespace std;
 class Control
 {
     private:
+        const string PATH = "./data";
         vector<string> GetFoldersName();
         void PrintFoldersName(vector<string>);
         void UseNewProject();
         void UseExistingProject();
+
+        void DoSimulation(Model *, vector<double>, vector<double>, string);
+        void SaveData(string, vector<double>);
+        vector<double> LoadData(string);
     public:
         Control();
 

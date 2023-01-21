@@ -47,6 +47,8 @@ void Runge4::DoMethod(vector<double> initialConditions)
     double s = initialConditions[0];
     double i = initialConditions[1];
     double r = initialConditions[2];
+    double N = s + i + r;
+    model->SetN(N);
 
     double t = initialConditions[3];
     double tmax = initialConditions[4];

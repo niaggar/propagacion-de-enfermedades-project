@@ -1,6 +1,10 @@
 #include "SirModel.h"
 
-SirModel::SirModel() {}
+SirModel::SirModel()
+{
+    this->modelType = ModelType::SIR;
+    this->modelName = "SIR";
+}
 
 void SirModel::SetParameters(vector<double> values)
 {

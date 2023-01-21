@@ -11,6 +11,8 @@ class SirModel : public Model
         double b;
         /// @brief fraccion de infectados que se recupera
         double k;
+
+        
     public:
         SirModel();
 

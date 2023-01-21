@@ -1,6 +1,10 @@
 #include "SirsVacModel.h"
 
-SirsVacModel::SirsVacModel() {}
+SirsVacModel::SirsVacModel()
+{
+    this->modelType = ModelType::SIRSV;
+    this->modelName = "SIRSV";
+}
 
 void SirsVacModel::SetParameters(vector<double> parameters)
 {

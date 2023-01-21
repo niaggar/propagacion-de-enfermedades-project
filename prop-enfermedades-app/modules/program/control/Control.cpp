@@ -6,121 +6,123 @@ Control::Control() {}
 void Control::UseNewProject()
 {
     string projectName = GetString("Introduzca el nombre del proyecto");
-    string path = "./data/" + projectName;
+    string path = PATH + "/" + projectName;
     mkdir(path.c_str(), 0777);
 
-    vector<double> constantsSIR = GetConstants(ModelType::SIR);
-    vector<double> constantsSIRS = GetConstants(ModelType::SIRS);
-    vector<double> constantsSIRSV = GetConstants(ModelType::SIRSV);
+    cout << "Se ha creado el proyecto: " << projectName << endl;
+
     vector<double> initialValues = GetInitialValues();
 
+    bool useModel = GetBool("¿Desea usar un modelo en concreto? (por defecto se usran todos los modelos)");
 
+    if (useModel)
+    {
+        ModelType modelType = GetModelType();
+        vector<double> constants = GetConstants(modelType);
 
+        Model *model;
+        switch (modelType)
+        {
+            case SIR:
+                model = new SirModel();
+                break;
+            case SIRS:
+                model = new SirsModel();
+                break;
+            case SIRSV:
+                model = new SirsVacModel();
+                break;
+        }
 
+        SaveData(path + "/const-" + model->modelName + ".dat", constants);
+        DoSimulation(model, initialValues, constants, path);
 
+        cout << "Se ha guardado el resultado del modelo " << model->modelName << " en: " << path << endl;
+    }
+    else
+    {
+        cout << "Se usaran todos los modelos" << endl;
 
-    SirModel *sirModel = new SirModel();
-    sirModel->SetParameters(constantsSIR);
+        Model *model = new Model[3];
+        SirModel *sirModel = new SirModel();
+        SirsModel *sirsModel = new SirsModel();
+        SirsVacModel *sirsvModel = new SirsVacModel();
 
-    SirsModel *sirsModel = new SirsModel();
-    sirsModel->SetParameters(constantsSIRS);
+        model[0] = *sirModel;
+        model[1] = *sirsModel;
+        model[2] = *sirsvModel;
 
-    SirsVacModel *sirsvModel = new SirsVacModel();
-    sirsvModel->SetParameters(constantsSIRSV);
+        for (int i = 0; i < 3; i++)
+        {
+            vector<double> constants = GetConstants(model[i].modelType);
+            SaveData(path + "/const-" + model[i].modelName + ".dat", constants);
+            DoSimulation(&model[i], initialValues, constants, path);
 
+            cout << "Se ha guardado el resultado del modelo " << model[i].modelName << " en: " << path << endl;
+        }
+    }
+}
 
+void Control::DoSimulation(Model *model, vector<double> initialValues, vector<double> constants, string path)
+{
+    model->SetParameters(constants);
 
+    string pathResult = path + "/result-" + model->modelName + ".dat";
+    string pathGraph = path + "/graph-" + model->modelName + ".png";
 
     Runge4 *runge4 = new Runge4();
-    runge4->SetModel(sirModel);
+    runge4->SetModel(model);
     runge4->DoMethod(initialValues);
 
-    double **resSir = runge4->GetResult();
-    int sizeSir = runge4->GetLength();
-
-    runge4->SetModel(sirsModel);
-    runge4->DoMethod(initialValues);
-
-    double **resSirs = runge4->GetResult();
-    int sizeSirs = runge4->GetLength();
-
-    runge4->SetModel(sirsvModel);
-    runge4->DoMethod(initialValues);
-
-    double **resSirsv = runge4->GetResult();
-    int sizeSirsv = runge4->GetLength();
-
-
-
-
-    string pathResultSir = path + "/resultSir.dat";
-    string pathResultSirs = path + "/resultSirs.dat";
-    string pathResultSirsv = path + "/resultSirsv.dat";
-
-    WriteData(pathResultSir, resSir, sizeSir);
-    WriteData(pathResultSirs, resSirs, sizeSirs);
-    WriteData(pathResultSirsv, resSirsv, sizeSirsv);
-
-
-
-
-
-    Images *images = new Images();
-    images->GenerateBasicPlot(pathResultSir, pathResultSir + ".png");
-    images->GenerateBasicPlot(pathResultSirs, pathResultSirs + ".png");
-    images->GenerateBasicPlot(pathResultSirsv, pathResultSirsv + ".png");
-
-
-
-
-
-
-    // Guardar los datos en archivos
-    string pathConstantsSIR = path + "/constantsSIR.txt";
-    string pathConstantsSIRS = path + "/constantsSIRS.txt";
-    string pathConstantsSIRSV = path + "/constantsSIRSV.txt";
-    string pathInitialValues = path + "/initialValues.txt";
+    double **res = runge4->GetResult();
+    int size = runge4->GetLength();
     
-    ofstream fileConstSIR;
-    fileConstSIR.open(pathConstantsSIR);
-    for (int i = 0; i < constantsSIR.size(); i++)
-    {
-        fileConstSIR << constantsSIR[i] << endl;
-    }
-    fileConstSIR.close();
+    WriteData(pathResult, res, size);
+    Images *images = new Images();
+    images->GenerateBasicPlot(pathResult, pathGraph);
 
-    ofstream fileConstSIRS;
-    fileConstSIRS.open(pathConstantsSIRS);
-    for (int i = 0; i < constantsSIRS.size(); i++)
-    {
-        fileConstSIRS << constantsSIRS[i] << endl;
-    }
-    fileConstSIRS.close();
-
-    ofstream fileConstSIRSV;
-    fileConstSIRSV.open(pathConstantsSIRSV);
-    for (int i = 0; i < constantsSIRSV.size(); i++)
-    {
-        fileConstSIRSV << constantsSIRSV[i] << endl;
-    }
-    fileConstSIRSV.close();
-
-    ofstream fileInitialValues;
-    fileInitialValues.open(pathInitialValues);
-    for (int i = 0; i < initialValues.size(); i++)
-    {
-        fileInitialValues << initialValues[i] << endl;
-    }
-    fileInitialValues.close();
+    delete runge4;
+    delete images;
 }
+
+
+void Control::SaveData(string path, vector<double> data)
+{
+    ofstream file;
+    file.open(path);
+    for (int i = 0; i < data.size(); i++)
+    {
+        file << data[i] << endl;
+    }
+    file.close();
+}
+
+vector<double> Control::LoadData(string path)
+{
+    vector<double> data;
+    ifstream file;
+    file.open(path);
+    string line;
+    while (getline(file, line))
+    {
+        data.push_back(stod(line));
+    }
+    file.close();
+    return data;
+}
+
 
 void Control::UseExistingProject()
 {
-    string projectName = GetProjectName();
-    string path = "./data/" + projectName + "/";
-    string pathConstants = path + "constants.txt";
-    string pathInitialValues = path + "initialValues.txt";
-    string pathModelType = path + "modelType.txt";
+    // string projectName = GetProjectName();
+    // string path = "./data/" + projectName + "/";
+    // string pathConstants = path + "constants.txt";
+    // string pathInitialValues = path + "initialValues.txt";
+    // string pathModelType = path + "modelType.txt";
+
+    // vector<double> constants = LoadData(pathConstants);
+    // vector<double> initialValues = LoadData(pathInitialValues);
+    // ModelType modelType = (ModelType)GetInt(pathModelType);
 
 
 }
@@ -128,29 +130,29 @@ void Control::UseExistingProject()
 
 void Control::Run()
 {
-    // cout << "Welcome to the program" << endl;
-    // cout << "-----------------------" << endl;
+    cout << "Welcome to the program" << endl;
+    cout << "-----------------------" << endl;
 
-    // cout << "Desea iniciar un nuevo proyecto? (y/n)" << endl;
-    // bool newProject = GetBool("Desea iniciar un nuevo proyecto? (y/n)");
-    // cout << "-----------------------" << endl;
+    cout << "Desea iniciar un nuevo proyecto? (y/n)" << endl;
+    bool newProject = GetBool("Desea iniciar un nuevo proyecto? (y/n)");
+    cout << "-----------------------" << endl;
 
-    UseNewProject();
 
-    // if (newProject)
-    // {
-    // }
-    // else
-    // {
-    //     UseExistingProject();
-    // }
+    if (newProject)
+    {
+        UseNewProject();
+    }
+    else
+    {
+        UseExistingProject();
+    }
 }
 
 double Control::GetDouble(string prompt)
 {
     double input;
 
-    cout << "Prompt: " << prompt << endl;
+    cout << prompt << endl;
 
     while (true)
     {
@@ -179,7 +181,7 @@ int Control::GetInt(string prompt)
 {
     int input;
 
-    cout << "Prompt: " << prompt << endl;
+    cout << prompt << endl;
 
     while (true)
     {
@@ -208,7 +210,7 @@ int Control::GetIntRange(string prompt, int min, int max)
 {
     int input;
 
-    cout << "Prompt: " << prompt << endl;
+    cout << prompt << endl;
     cout << "Min: " << min << " Max: " << max << endl;
 
     while (true)
@@ -237,7 +239,7 @@ bool Control::GetBool(string prompt)
 {
     string input;
 
-    cout << "Prompt: " << prompt << endl;
+    cout << prompt << endl;
 
     while (true)
     {
@@ -269,7 +271,7 @@ string Control::GetString(string prompt)
 {
     string input;
 
-    cout << "Prompt: " << prompt << endl;
+    cout << prompt << endl;
 
     while (true)
     {
