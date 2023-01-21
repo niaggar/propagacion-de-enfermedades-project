@@ -16,24 +16,24 @@ using namespace std;
 int main()
 {
     Control *control = new Control();
-    control->Run();
+    // control->Run();
 
 
 
-//     double dt = control->GetDouble("Cual es el tamano de paso? (dt)");
-//     double tmax = control->GetDouble("Cual es el tiempo maximo? (dias)");
-//     double t = control->GetDouble("Cual es el tiempo inicial? (dias)");
+    double dt = control->GetDouble("Cual es el tamano de paso? (dt)");
+    double tmax = control->GetDouble("Cual es el tiempo maximo? (dias)");
+    double t = control->GetDouble("Cual es el tiempo inicial? (dias)");
     
-//     double S = control->GetInt("Cual es la poblacion inicial SUCEPTIBLE? (# personas)");
-//     double I = control->GetDouble("Cual es la poblacion inicial INFECTADA? (# personas)");
-//     double R = control->GetDouble("Cual es la poblacion inicial REMOVIDA? (# personas)");
+    double S = control->GetInt("Cual es la poblacion inicial SUCEPTIBLE? (# personas)");
+    double I = control->GetDouble("Cual es la poblacion inicial INFECTADA? (# personas)");
+    double R = control->GetDouble("Cual es la poblacion inicial REMOVIDA? (# personas)");
 
-//     int N = S + I + R;
-//     double s = S / N;
-//     double i = I / N;
-//     double r = R / N;    
+    int N = S + I + R;
+    double s = S / N;
+    double i = I / N;
+    double r = R / N;    
 
-
+    Phase("dataSirsVac", PopulationType::Infected, t, s, i, r)
 //     //SIR MODEL---------------------
 
 //     SirModel *model_1 = new SirModel();
@@ -84,17 +84,16 @@ int main()
 
 //     WriteData("dataSirsVac", dataSirsVac, n_3);
 
-//     //FIND MAX------------------------------------------------------------
+    //FIND MAX------------------------------------------------------------
 
-//     double *max_suceptibles_Sir = Maximum("dataSir", PopulationType::Infected);
-//     cout << "Max suceptibles Sir" << " " << max_suceptibles_Sir[0] << " " << max_suceptibles_Sir[1] << endl;
+    // double *max_suceptibles_Sir = Maximum("dataSir", PopulationType::Infected);
+    // cout << "Max suceptibles Sir" << " " << max_suceptibles_Sir[0] << " " << max_suceptibles_Sir[1] << endl;
 
-//     double *max_suceptibles_Sirs = Maximum("dataSirs", PopulationType::Infected);
-//     cout << "Max suceptibles Sirs" << " " << max_suceptibles_Sirs[0] << " " << max_suceptibles_Sirs[1] << endl;
+    // double *max_suceptibles_Sirs = Maximum("dataSirs", PopulationType::Infected);
+    // cout << "Max suceptibles Sirs" << " " << max_suceptibles_Sirs[0] << " " << max_suceptibles_Sirs[1] << endl;
 
-//     double *max_suceptibles_SirsVac = Maximum("dataSirsVac", PopulationType::Infected);
-//     cout << "Max suceptibles SirVac" << " " << max_suceptibles_SirsVac[0] << " " << max_suceptibles_SirsVac[1] << endl;
-
+    // double *max_suceptibles_SirsVac = Maximum("dataSirsVac", PopulationType::Infected);
+    // cout << "Max suceptibles SirVac" << " " << max_suceptibles_SirsVac[0] << " " << max_suceptibles_SirsVac[1] << endl;
 
 //     //CREATE IMAGES-------------------------------------------------------
 
