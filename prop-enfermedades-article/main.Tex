@@ -206,10 +206,10 @@ material con flujos de entrada y salida. Este modelo
 sirve para simular diferentes interacciones, entre ellas una de sus
 aplicaciones se da en la epidemiología. Por lo general, un modelo
 epidemiológico de compartimientos, se divide en clases y subclases de
-individuos, y se estiman tases de transición, para modelar el comportamiento
+individuos, y se estiman tasas de transición, para modelar el comportamiento
 en base a un sistema de ecuaciones diferenciales.\\
 \newline
-En particular si la población se clasifica, en susceptibles $S$, infectados $R$
+En particular si la población se clasifica, en susceptibles $S$, infectados $I$
 y recuperados $R$, se tienen los siguientes tipos de modelos;
 \begin{enumerate}
   \item \textbf{\textit{SI}} la enfermedad del SIDA es un ejemplo que se
@@ -258,9 +258,9 @@ Si consideramos una relación mas simple, que nos da cuenta de la relación entr
 cada población con la población total $N$, de este modo;
 \begin{equation} \label{poblaciones}
   \begin{split}
-    s(t) = \frac{s(t)}{N},\\
-    i(t) = \frac{i(t)}{N},\\
-    r(t) = \frac{r(t)}{N}\\
+    s(t) = \frac{S(t)}{N},\\
+    i(t) = \frac{I(t)}{N},\\
+    r(t) = \frac{R(t)}{N}\\
   \end{split}
 \end{equation}
 
@@ -340,7 +340,7 @@ Como se mencionó en la introducción, el código se realiza en
 \textbf{\textit{C++}}, el repositorio completo se puede encontrar en
 \emph{GitHub} \cite{GitHub}
 [ver
-  \href{https://github.com/niaggar/propagacion-de-enfermedades-project.git}{Propagacion
+  \href{https://github.com/niaggar/propagacion-de-enfermedades-project}{Propagacion
     de enfermedades}].
 
 \subsection{Runge-Kutta 4 para ecuaciones acopladas}
@@ -365,8 +365,9 @@ de extrapolar este código para el desarrollo de otros modelos, se define como
 una \textit{Clase}, que recibe como parámetro
 el modelo a implementar.
 
-\subsection{Valores iniciales y parámetros}
 %%%%VALORES INICIAALES&&&&&&&&&&&&&&&
+\subsection{Valores iniciales y parámetros}
+\subsubsection{Valores iniciales}
 Para la ejecución de la simulación es necesario un problema de valor inicial,
 así que se escribe un comando que permita
 introducir por consola, los valores iniciales, que corresponde al numero
@@ -375,7 +376,7 @@ se toma para este desarrollo y a manera de análisis una población total $N=7,9
 los siguientes valores iniciales;
 \begin{equation}
   \begin{split}
-    S(0) = 7,900,000,\\
+    S(0) = 7,899,990,\\
     I(0) = 10,\\
     R(0) = 0\\
   \end{split}
@@ -384,30 +385,68 @@ los siguientes valores iniciales;
 Pero dado que se usara la relación \ref{poblaciones}, estas condiciones iniciales corresponden a;
 \begin{equation}
   \begin{split}
-    s(0) = 1,\\
+    s(0) = 0. 99999873,\\
     i(0) = 1, 27 \times 10^{-6},\\
     r(0) = 0\\
   \end{split}
 \end{equation}
 
-
 %%%%PARAMETROS%%%%%%%%%%%%%
+\subsubsection{Parámetros}
+En particular la estimación de parámetros se torna difusa,
+ya que en general depende de muchos factores que son escasamente medibles
+con precisión, ya que relacionan procesos de comportamiento social, dinámica viral,
+y características propia de la enfermedad, y si se incluyen modelos mas complejos,
+que consideren tasas de natalidad, muertes, retorno de recuperados a infectados,
+se suman más parámetros.\\
 
+Se han desarrollado técnicas de estimación de estos parámetros, y en particular solo mencionando
+en nuestros caso de interés las constantes $b$ y $k$. Un primer acercamiento se obtiene
+desde un análisis matemático de la convergencia de las soluciones, lo que permite establecer
+un rango de dominio para los parámetros, en los cuales el modelo cobra sentido. Es decir
+el análisis cualitativo permite dar soluciones consistentes con el problema. En el capitulo 11
+del libro \textit{Modelos de la propagación de enfermedades infecciosas} \cite{Modelos de propagacion
+}, se aborda a profundidad la estimación de los parámetros, en los que se concluye que;
+el factor $b$ de tasa de contactos, ronda aproximadamente entre valores $0,00001$ y $1$, mientras que la tasa de remoción
+$k$, debe satisfacer que su inverso $1/k$ este cerca del $30\%$ de las personas infectadas inicialmente.\\
+
+El estudiar el comportamiento de la población, tambien proporciona información más precisa para
+calcular estos parámetros, basta con seguir una tendencia temprana del comportamiento en base a datos
+reales, o registros pasados del mismo carácter. Al contar con una base de datos poblaciones en términos de susceptibles, infectados
+y recuperados, existen algunas técnicas estadísticas de estimación \cite{Modelos de propagacion}, que permiten calcular de manera apropiada
+estos parámetros y demás.\\
+
+En nuestro caso particular es de interés solucionar el sistema, para 4 parejas de valores $k$ y $b$, variando a 
+$k \in [0.1, 0.6]$ y $b \in [0.5, 2]$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% SECCIONES DE DISEÑO Y DESARROLLO %%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Solución propuesta}
 
 \section{Simulaciones y pruebas}
-\emph{testbench} o pruebas realizadas
 
-\section{Implementación de la solución}
+% \emph{testbench} o pruebas realizadas, graficas 
+
+\section{Acercamiento a otros modelos}
+%IMPLEMENTACION DEL CODIGO A OTROS MODELOS, SIRS Y SRIS CON VACUNACION
+
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%% SECCIONES FINALES %%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
+%%SOLUCION A LAS PREGUNTAS PLANTEADAS 
+
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -415,7 +454,7 @@ Pero dado que se usara la relación \ref{poblaciones}, estas condiciones inicial
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusiones}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \ifCLASSOPTIONcaptionsoff
   \newpage
@@ -434,9 +473,8 @@ Pero dado que se usara la relación \ref{poblaciones}, estas condiciones inicial
   Mathematical Theory of Epidemics
   Royal Society of London Proceedings Series A. 1927;115:700–721.
   \bibitem{compartimientos}
-  Driessche P. Wu J. (Eds.). Mathematical Epidemiology (Lecture Notes in
-  Mathematics / Mathematical
-  Biosciences Subseries). Springer 2008
+  J. Aracil. Introducción a la dinámica de sistemas. Alianza Universidad Textos.
+  Mexico. 1986.Biosciences Subseries. Springer 2008
   \bibitem{SIDA}
   Driessche P. Wu J. (Eds.). Mathematical Epidemiology (Lecture Notes in
   Mathematics / Mathematical
@@ -470,11 +508,14 @@ Pero dado que se usara la relación \ref{poblaciones}, estas condiciones inicial
   Andres Valencia and Nicolas Aguilera, Project: Propagación de
   enfermedades in C++
   Fisica Computacional, Enero-2023, Cali Valle.
-  \url{https://github.com/niaggar/propagacion-de-enfermedades-project.git}.
+  \url{https://github.com/niaggar/propagacion-de-enfermedades-project}.
   \bibitem{Runge-kutta}
   J. Arrieta, R. Ferreira, R. Pardo y A. Rodríguez-Bernal. Análisis Numérico
   de Ecuaciones Diferenciales Ordinarias.
   Paraninfo, Madrid, 2020. ISBN 9788428344418, ISBN 8428344418.
+  \bibitem{Modelos de propagacion}
+  Fred Brauer, Modelos de la propagación de enfermedades infecciosas,
+  Universidad Autónoma de Occidente, 2015. ISBN	958871365X, 9789588713656.
 
 \end{thebibliography}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
