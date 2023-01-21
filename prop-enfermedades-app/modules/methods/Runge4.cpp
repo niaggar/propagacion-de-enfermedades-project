@@ -42,8 +42,17 @@ double *Runge4::Calc(double t, double dt, double s, double i, double r)
     return result;
 }
 
-void Runge4::DoMethod(double t, double dt, double s, double i, double r, double tmax)
+void Runge4::DoMethod(vector<double> initialConditions)
 {
+    double s = initialConditions[0];
+    double i = initialConditions[1];
+    double r = initialConditions[2];
+
+    double t = initialConditions[3];
+    double tmax = initialConditions[4];
+    double dt = initialConditions[5];
+
+
     int n = (int)((tmax - t) / dt);
     
     double **result = new double *[4];

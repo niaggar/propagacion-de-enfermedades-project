@@ -2,6 +2,7 @@
 #define RUNGE4_H
 
 #include "models/Model.h"
+#include <vector>
 
 using namespace std;
 
@@ -44,7 +45,7 @@ class Runge4
         /// @param i poblacion infectada
         /// @param r poblacion removida
         /// @param tmax tiempo maximo de ejecucion
-        void DoMethod(double, double, double, double, double, double);
+        void DoMethod(vector<double>);
 
         /// @brief Obtiene el resultado de la ejecucion del metodo
         /// @return Arreglo con el resultado de la ejecucion del metodo [t[n], s[n], i[n], r[n]]

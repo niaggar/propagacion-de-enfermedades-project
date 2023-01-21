@@ -18,6 +18,10 @@ void Model::SetN(int n)
     this->N = n;
 }
 
+void Model::SetParameters(vector<double> values)
+{
+}
+
 double Model::Susceptible(double t, double s, double i, double r)
 {
     return 0.0;

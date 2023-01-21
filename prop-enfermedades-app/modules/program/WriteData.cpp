@@ -9,10 +9,10 @@ using namespace std;
 /// @param fileName Nombre del fichero
 /// @param data Datos resultantes del modelo [0] = tiempo, [1] = sucectible, [2] = infectado, [3] = removido
 /// @param size Tamaño de los datos resultantes
-void WriteData(string fileName, double **data, int size)
+void WriteData(string fileRoute, double **data, int size)
 {
     ofstream file;
-    file.open("./data/" + fileName + ".dat");
+    file.open(fileRoute);
 
     for (int i = 0; i < size; i++)
     {

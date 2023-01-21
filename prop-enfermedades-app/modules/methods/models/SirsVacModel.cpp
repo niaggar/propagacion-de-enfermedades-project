@@ -2,13 +2,13 @@
 
 SirsVacModel::SirsVacModel() {}
 
-void SirsVacModel::SetParameters(double m, double b, double v, double g1, double g2)
+void SirsVacModel::SetParameters(vector<double> parameters)
 {
-    this->m = m;
-    this->b = b;
-    this->v = v;
-    this->g1 = g1;
-    this->g2 = g2;
+    this->m = parameters[0];
+    this->b = parameters[1];
+    this->v = parameters[2];
+    this->g1 = parameters[3];
+    this->g2 = parameters[4];
 }
 
 double SirsVacModel::Susceptible(double t, double s, double i, double r)

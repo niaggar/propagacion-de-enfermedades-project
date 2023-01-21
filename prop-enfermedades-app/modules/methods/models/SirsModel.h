@@ -20,7 +20,7 @@ class SirsModel : public Model
         /// @param m mu, tasa de nacimiento natural de la poblacion
         /// @param b beta, capacidad de infeccion de la enfermedad
         /// @param v v, proporcion de removidos que se transforman en susceptibles
-        void SetParameters(double m, double b, double v);
+        void SetParameters(vector<double>) override;
 
         /// @brief Ecuacion diferencial que representa la poblacion susceptible
         /// @param t tiempo actual

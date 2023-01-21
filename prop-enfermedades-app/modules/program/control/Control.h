@@ -7,7 +7,17 @@
 #include <stdio.h>
 #include <cstring>
 #include <vector>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fstream>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "../program.h"
+#include "../images/Images.h"
 #include "../../enums/enums.h"
+#include "../../methods/models/Models.h"
+#include "../../methods/Runge4.h"
 
 using namespace std;
 
@@ -17,6 +27,8 @@ class Control
     private:
         vector<string> GetFoldersName();
         void PrintFoldersName(vector<string>);
+        void UseNewProject();
+        void UseExistingProject();
     public:
         Control();
 

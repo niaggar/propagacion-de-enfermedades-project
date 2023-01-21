@@ -1,10 +1,7 @@
 #ifndef SIRSVACMODEL_H
 #define SIRSVACMODEL_H
 
-#include <functional>
 #include "Model.h"
-
-using namespace std;
 
 /// @brief Clase que representa el modelo SIRS con vacunacion -- Modelo secundario del trabajo
 class SirsVacModel : public Model
@@ -30,7 +27,7 @@ public:
     /// @param v v, proporcion de removidos que se transforman en susceptibles
     /// @param g1 gama, proporcion de infectados que se transforman en removidos
     /// @param g2 gama, proporcion de infectados que se transforman en removidos
-    void SetParameters(double m, double b, double v, double g1, double g2);
+    void SetParameters(vector<double>) override;
 
     /// @brief Ecuacion diferencial que representa la poblacion susceptible
     /// @param t tiempo actual

@@ -17,7 +17,7 @@ class SirModel : public Model
         /// @brief Establece los parametros del modelo
         /// @param b valor: contactos que pueden producir infeccion
         /// @param k valor: fraccion de infectados que se recupera
-        void SetParameters(double b, double k);
+        void SetParameters(vector<double>) override;
 
         /// @brief Ecuacion diferencial que representa la poblacion susceptible
         /// @param t tiempo actual

@@ -2,11 +2,11 @@
 
 SirsModel::SirsModel() {}
 
-void SirsModel::SetParameters(double m, double b, double v)
+void SirsModel::SetParameters(vector<double> parameters)
 {
-    this->m = m;
-    this->b = b;
-    this->v = v;
+    this->m = parameters[0];
+    this->b = parameters[1];
+    this->v = parameters[2];
 }
 
 double SirsModel::Susceptible(double t, double s, double i, double r)
