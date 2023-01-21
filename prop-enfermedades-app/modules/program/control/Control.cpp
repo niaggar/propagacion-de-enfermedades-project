@@ -14,6 +14,12 @@ void Control::UseNewProject()
     vector<double> initialValues = GetInitialValues();
 
     bool useModel = GetBool("¿Desea usar un modelo en concreto? (por defecto se usran todos los modelos)");
+    bool normalize = GetBool("¿Desea normalizar los datos? (por defecto no se normalizan)");
+
+    double N = initialValues[0] + initialValues[1] + initialValues[2];
+    if (normalize)
+        for (int i = 0; i < 3; i++)
+            initialValues[i] /= N;
 
     if (useModel)
     {
@@ -36,6 +42,7 @@ void Control::UseNewProject()
 
         SaveData(path + "/const-" + model->modelName + ".dat", constants);
         DoSimulation(model, initialValues, constants, path);
+        Phase(path, modelType);
 
         cout << "Se ha guardado el resultado del modelo " << model->modelName << " en: " << path << endl;
     }
@@ -132,8 +139,6 @@ void Control::Run()
 {
     cout << "Welcome to the program" << endl;
     cout << "-----------------------" << endl;
-
-    cout << "Desea iniciar un nuevo proyecto? (y/n)" << endl;
     bool newProject = GetBool("Desea iniciar un nuevo proyecto? (y/n)");
     cout << "-----------------------" << endl;
 

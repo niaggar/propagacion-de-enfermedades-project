@@ -13,7 +13,7 @@ using namespace std;
 /// @param fileName Nombre del fichero
 /// @param populationType Tipo de poblacion
 /// @return Array de datos de una poblacion [0] = tiempo, [1] = poblacion
-double **ReadData(string fileName, PopulationType populationType)
+double **ReadData(string fileRoute, PopulationType populationType)
 {
     ifstream file;
     
@@ -23,7 +23,7 @@ double **ReadData(string fileName, PopulationType populationType)
     string line_readed = "";
     int col = populationType;
 
-    file.open("./data/" + fileName + ".dat");
+    file.open(fileRoute);
 
     if (!file)
     {
