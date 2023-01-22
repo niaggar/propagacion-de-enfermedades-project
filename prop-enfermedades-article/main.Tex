@@ -35,27 +35,27 @@
 \definecolor{gray97}{gray}{.97}
 %Estilo del código
 \lstset{ frame=Ltb,
-  framerule=0pt,
-  aboveskip=0.5cm,
-  framextopmargin=3pt,
-  framexbottommargin=3pt,
-  framexleftmargin=0.4cm,
-  framesep=0pt,
-  rulesep=.4pt,
-  backgroundcolor=\color{gray97},
-  rulesepcolor=\color{black},
-  %
-  stringstyle=\ttfamily,
-  showstringspaces = false,
-  basicstyle=\ttfamily,
-  commentstyle=\color{blue},
-  keywordstyle=\color{red},
-  %
-  numbers=left,
-  numbersep=15pt,
-  numberstyle=\ttfamily,
-  numberfirstline = false,
-  breaklines=true,
+	framerule=0pt,
+	aboveskip=0.5cm,
+	framextopmargin=3pt,
+	framexbottommargin=3pt,
+	framexleftmargin=0.4cm,
+	framesep=0pt,
+	rulesep=.4pt,
+	backgroundcolor=\color{gray97},
+	rulesepcolor=\color{black},
+	%
+	stringstyle=\ttfamily,
+	showstringspaces = false,
+	basicstyle=\ttfamily,
+	commentstyle=\color{blue},
+	keywordstyle=\color{red},
+	%
+	numbers=left,
+	numbersep=15pt,
+	numberstyle=\ttfamily,
+	numberfirstline = false,
+	breaklines=true,
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% CREAR Y REESCRIBIR ALGUNOS COMANDOS %%%
@@ -79,24 +79,24 @@
 %%% ENCABEZADO DE LAS PÁGINAS  %%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\MYhead}{\smash{\scriptsize
-    \hfil\parbox[t][\height][t]{\textwidth}{\centering
-      \begin{picture}(0,0)
-        \put(-15,-20){\includegraphics[width=4CM]{Figs/logo UV.png}} \end{picture}
-      \hspace{6.4cm}
-      PROYECTO - FÍSICA COMPUTACIONAL II-2022\hspace{5.15cm}
-      \, \\
-      \hspace{5.2cm} Prof. Karem Rodríguez\hspace{3cm} Enero
-      2023\\
-      \underline{\hspace{ \textwidth}}}\hfil\hbox{}}}
+		\hfil\parbox[t][\height][t]{\textwidth}{\centering
+			\begin{picture}(0,0)
+				\put(-15,-20){\includegraphics[width=4CM]{Figs/logo UV.png}} \end{picture}
+			\hspace{6.4cm}
+			PROYECTO - FÍSICA COMPUTACIONAL II-2022\hspace{5.15cm}
+			\, \\
+			\hspace{5.2cm} Prof. Karem Rodríguez\hspace{3cm} Enero
+			2023\\
+			\underline{\hspace{ \textwidth}}}\hfil\hbox{}}}
 \makeatletter
 % normal pages
 \def\ps@headings{%
-  \def\@oddhead{\MYhead}%
-  \def\@evenhead{\MYhead}}%
+	\def\@oddhead{\MYhead}%
+	\def\@evenhead{\MYhead}}%
 % title page
 \def\ps@IEEEtitlepagestyle{%
-  \def\@oddhead{\MYhead}%
-  \def\@evenhead{\MYhead}}%
+	\def\@oddhead{\MYhead}%
+	\def\@evenhead{\MYhead}}%
 \makeatother
 % make changes take effect
 \pagestyle{headings}
@@ -116,12 +116,12 @@
 %%%%%%%%% AUTORES %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author{Andrés Felipe Valencia \\
-  \textit{andres.valencia.fonseca@correounivalle.edu.co}\\% stops a space
-  \and
-  Nicolás Aguilera García \\
-  \textit{nicolas.aguilera@correounivalle.edu.co}\\
-  \thanks{El presente documento corresponde al articulo final del
-    proyecto de Fisica computacional}} %\thanks anexa una nota a pie de página donde se puede colocar alguna información sobre la naturaleza del documento.
+	\textit{andres.valencia.fonseca@correounivalle.edu.co}\\% stops a space
+	\and
+	Nicolás Aguilera García \\
+	\textit{nicolas.aguilera@correounivalle.edu.co}\\
+	\thanks{El presente documento corresponde al articulo final del
+		proyecto de Fisica computacional}} %\thanks anexa una nota a pie de página donde se puede colocar alguna información sobre la naturaleza del documento.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Comando que indica la generación del título
@@ -212,26 +212,26 @@ en base a un sistema de ecuaciones diferenciales.\\
 En particular si la población se clasifica, en susceptibles $S$, infectados $I$
 y recuperados $R$, se tienen los siguientes tipos de modelos;
 \begin{enumerate}
-  \item \textbf{\textit{SI}} la enfermedad del SIDA es un ejemplo que se
-        ajusta a este modelo \cite{SIDA}, aunque actualmente se está desarrollando
-        modelos mucho mas complejos para tratar esta enfermedad.
-  \item \textbf{\textit{SIR}} Sirve para describir enfermedades virales,
-        como la rubéola o la sarampión \cite{Rubeola}.
-  \item \textbf{\textit{SIS}} Modela el caso en que los individuos
-        infectados pueden retornar a la clase susceptible, es decir no adquieren
-        inmunidad. El dengue \cite{Dengue} es una enfermedad de este tipo.
-  \item \textbf{\textit{SIRS}} Es un modelo con capacidad de soporte,
-        esto significa que el número de susceptibles no crece indefinidamente, puede
-        modelar la influenza \cite{Influenza}.
-  \item \textbf{\textit{SIRS-V}} Recoge los modelos anteriores, y además
-        modela la capacidad de vacunación sobre la población \cite{Vacunacion}, siendo
-        este modelo uno de los mas completos.
+	\item \textbf{\textit{SI}} la enfermedad del SIDA es un ejemplo que se
+	      ajusta a este modelo \cite{SIDA}, aunque actualmente se está desarrollando
+	      modelos mucho mas complejos para tratar esta enfermedad.
+	\item \textbf{\textit{SIR}} Sirve para describir enfermedades virales,
+	      como la rubéola o la sarampión \cite{Rubeola}.
+	\item \textbf{\textit{SIS}} Modela el caso en que los individuos
+	      infectados pueden retornar a la clase susceptible, es decir no adquieren
+	      inmunidad. El dengue \cite{Dengue} es una enfermedad de este tipo.
+	\item \textbf{\textit{SIRS}} Es un modelo con capacidad de soporte,
+	      esto significa que el número de susceptibles no crece indefinidamente, puede
+	      modelar la influenza \cite{Influenza}.
+	\item \textbf{\textit{SIRS-V}} Recoge los modelos anteriores, y además
+	      modela la capacidad de vacunación sobre la población \cite{Vacunacion}, siendo
+	      este modelo uno de los mas completos.
 \end{enumerate}
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.34]{Modelos.png}
-  \caption{Modelos tipo SI, SIR, SIS y SIRS de compartimentos}
+	\centering
+	\includegraphics[scale=0.34]{Modelos.png}
+	\caption{Modelos tipo SI, SIR, SIS y SIRS de compartimentos}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%MMODELO SIR%%%%%%%%%%%%%
@@ -241,12 +241,12 @@ sobre la cual actúa la enfermedad, que en principio se considera constante, se
 clasifican en los siguientes grupos:
 
 \begin{itemize}
-  \item \textbf{Susceptibles}, son aquellos individuos sanos pero que en
-        potencia se pueden
-        enfermar.
-  \item \textbf{Infectados}, son los individuos enfermos.
-  \item \textbf{Removidos}, son aquellos que se han recuperado, y
-        permanecen inmune a la misma sin poder propagarla.
+	\item \textbf{Susceptibles}, son aquellos individuos sanos pero que en
+	      potencia se pueden
+	      enfermar.
+	\item \textbf{Infectados}, son los individuos enfermos.
+	\item \textbf{Removidos}, son aquellos que se han recuperado, y
+	      permanecen inmune a la misma sin poder propagarla.
 \end{itemize}
 
 Se denota por $S(t)$, $I(t)$ y $R(t)$ el número de individuos susceptibles,
@@ -257,22 +257,22 @@ retroalimentación $S \rightarrow I \rightarrow R$.\newline
 Si consideramos una relación mas simple, que nos da cuenta de la relación entre
 cada población con la población total $N$, de este modo;
 \begin{equation} \label{poblaciones}
-  \begin{split}
-    s(t) = \frac{S(t)}{N},\\
-    i(t) = \frac{I(t)}{N},\\
-    r(t) = \frac{R(t)}{N}\\
-  \end{split}
+	\begin{split}
+		s(t) = \frac{S(t)}{N},\\
+		i(t) = \frac{I(t)}{N},\\
+		r(t) = \frac{R(t)}{N}\\
+	\end{split}
 \end{equation}
 
 Para describir entonces la dinámica de la enfermedad se propone el siguiente
 sistema:
 
 \begin{equation}\label{SIR}
-  \begin{split}
-    \frac{ds}{dt} = -bs(t)i(t),\\
-    \frac{di}{dt} = bs(t)i(t)-ki(t),\\
-    \frac{dr}{dt} = -ki(t)\\
-  \end{split}
+	\begin{split}
+		\frac{ds}{dt} = -bs(t)i(t),\\
+		\frac{di}{dt} = bs(t)i(t)-ki(t),\\
+		\frac{dr}{dt} = -ki(t)\\
+	\end{split}
 \end{equation}
 
 Donde $b$ y $k$, son parámetros de la enfermedad, más estrictamente; $k$ es la
@@ -296,24 +296,24 @@ sección \ref{Modelos} se muestran algunos ejemplos. En el caso del modelo
 sobre el que se trabaja, se parte bajo los siguientes supuestos;
 
 \begin{enumerate}
-  \item  El tamaño de la población $N$ es constante, es decir no se
-        consideran muertes, ni se tiene en cuenta los nacimientos dentro de la
-        población
-        durante la epidemia, esto implica la relación;
-        \begin{equation*}
-          \frac{d(s+i+r)}{dt} = 0
-        \end{equation*}
-        Esta hipótesis se consigue de manera razonable en epidemias de
-        corta duración.
-  \item La enfermedad únicamente se propaga, bajo la ley de acción de
-        masas entre la población de susceptibles e infectados, como
-        tambien se supone que la transmisión se rige por la incidencia
-        común, entre las mismas poblaciones, lo que se refleja en el parámetro
-        $b$, una taza constante de contagios que es proporcional al
-        numero de contactos entre los individuos susceptibles e infectados.
-  \item La taza de recuperación de individuos infectados $k$, no varia
-        bajo la dinámica de las poblaciones ni de la enfermedad, es decir es una
-        constante.
+	\item  El tamaño de la población $N$ es constante, es decir no se
+	      consideran muertes, ni se tiene en cuenta los nacimientos dentro de la
+	      población
+	      durante la epidemia, esto implica la relación;
+	      \begin{equation}\label{suposicion}
+		      \frac{d(s+i+r)}{dt} = 0
+	      \end{equation}
+	      Esta hipótesis se consigue de manera razonable en epidemias de
+	      corta duración.
+	\item La enfermedad únicamente se propaga, bajo la ley de acción de
+	      masas entre la población de susceptibles e infectados, como
+	      tambien se supone que la transmisión se rige por la incidencia
+	      común, entre las mismas poblaciones, lo que se refleja en el parámetro
+	      $b$, una taza constante de contagios que es proporcional al
+	      numero de contactos entre los individuos susceptibles e infectados.
+	\item La taza de recuperación de individuos infectados $k$, no varia
+	      bajo la dinámica de las poblaciones ni de la enfermedad, es decir es una
+	      constante.
 \end{enumerate}
 
 \section{Metodología}
@@ -340,8 +340,8 @@ Como se mencionó en la introducción, el código se realiza en
 \textbf{\textit{C++}}, el repositorio completo se puede encontrar en
 \emph{GitHub} \cite{GitHub}
 [ver
-  \href{https://github.com/niaggar/propagacion-de-enfermedades-project}{Propagacion
-    de enfermedades}].
+	\href{https://github.com/niaggar/propagacion-de-enfermedades-project}{Propagacion
+		de enfermedades}].
 
 \subsection{Runge-Kutta 4 para ecuaciones acopladas}
 Los métodos de Runge-Kutta son un conjunto de métodos genéricos iterativos,
@@ -375,20 +375,20 @@ inicial de individuos de cada población dentro del modelo. De forma arbitraria
 se toma para este desarrollo y a manera de análisis una población total $N=7,900,000$, y
 los siguientes valores iniciales;
 \begin{equation}
-  \begin{split}
-    S(0) = 7,899,990,\\
-    I(0) = 10,\\
-    R(0) = 0\\
-  \end{split}
+	\begin{split}
+		S(0) = 7,899,990,\\
+		I(0) = 10,\\
+		R(0) = 0\\
+	\end{split}
 \end{equation}
 
 Pero dado que se usara la relación \ref{poblaciones}, estas condiciones iniciales corresponden a;
 \begin{equation}
-  \begin{split}
-    s(0) = 0. 99999873,\\
-    i(0) = 1, 27 \times 10^{-6},\\
-    r(0) = 0\\
-  \end{split}
+	\begin{split}
+		s(0) = 0. 99999873,\\
+		i(0) = 1, 27 \times 10^{-6},\\
+		r(0) = 0\\
+	\end{split}
 \end{equation}
 
 %%%%PARAMETROS%%%%%%%%%%%%%
@@ -416,8 +416,13 @@ reales, o registros pasados del mismo carácter. Al contar con una base de datos
 y recuperados, existen algunas técnicas estadísticas de estimación \cite{Modelos de propagacion}, que permiten calcular de manera apropiada
 estos parámetros y demás.\\
 
-En nuestro caso particular es de interés solucionar el sistema, para 4 parejas de valores $k$ y $b$, variando a 
-$k \in [0.1, 0.6]$ y $b \in [0.5, 2]$.
+En nuestro caso particular es de interés solucionar el sistema, para 4 parejas de valores $k$ y $b$, variando;
+\begin{equation}
+	\begin{split}
+		k \in [0.1, 0.6],\\
+		b \in [0.5, 2].
+	\end{split}
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% SECCIONES DE DISEÑO Y DESARROLLO %%%%%%
@@ -429,12 +434,71 @@ $k \in [0.1, 0.6]$ y $b \in [0.5, 2]$.
 
 \section{Acercamiento a otros modelos}
 %IMPLEMENTACION DEL CODIGO A OTROS MODELOS, SIRS Y SRIS CON VACUNACION
+En la sección \ref{Modelos}, se habla acerca de otros modelos de compartimiento, que tienen en cuenta más factores,
+mejorando las hipótesis planteadas en el modelo \textit{SIR}, lo que permite
+tener modelos más precisos, como es el caso del modelo \textit{SIRS}, e incluso poder añadir
+un control de vacunación. A continuación se hablara brevemente acerca de estos dos modelos en concreto,
+y el cómo implementar la simulación sobre los mismos con el desarrollo computacional realizado.
 
+\subsection{Modelo SIRS}\label{Modelo SIRS}
+El modelo SIR es optimo para describir epidemias en periodos de tiempo no muy amplios
+en los que podemos prescindir de los nacimientos y las muertes por causas naturales, superar esta limitación,
+permitiría un análisis dinámico en periodos de tiempo más largos. 
+Para modelizar este caso, es necesario considerar las muertes por causas externas a la epidemia,
+la tasa de natalidad, y si es el caso incluir la tasa de recuperados que regresan a la población infectada (este ultimo depende 
+de si la enfermedad provoca o no inmunidad a los individuos que ya fueron infectados). Para realizarlo de manera
+más sencilla, se supone que tanto la tasa de natalidad como la mortandad 
+siguen un comportamiento malthusiano, y además la población total se mantiene constante, esto se consigue equiparando la
+tasa de recién nacidos con las muertes.\\ 
 
+Esta consideración sutil, denomina a este nuevo modelo como \textit{modelo SIR con dinámica vital}\cite{SIRS-VAC}, aunque 
+hay que destacar que esta modificación sigue siendo muy modesta, si se busca mejorar mucho más el modelo, 
+habría que considerar que la población total $N$ en realidad no es constante, y esto implicaría añadir una nueva
+ecuación para $N'$.
 
+El modelo completo se vería en una modificación del sistema \ref{SIR}, de la siguiente forma;
 
+\begin{equation*}
+    \begin{split}
+      \frac{ds}{dt} = -bs(t)i(t) - \mu s(t) + B,\\
+      \frac{di}{dt} = bs(t)i(t)-ki(t)-\mu i(t),\\
+      \frac{dr}{dt} = -ki(t) - \mu r(t)\\
+    \end{split}
+\end{equation*}
 
+Donde se han introducido dos nuevos parámetros, $\mu > 0$ como la tasa de mortalidad por casas naturales 
+(este se debe restar a todas las poblaciones), y $B$ que representa la tasa de nacimientos, recién nacidos que se suman
+a la población de susceptibles.\\ 
 
+Pero por simplicidad hemos dicho que se mantendrá la suposición \ref{suposicion}, la población
+total se mantendrá constante, por lo que necesariamente $B = \mu N$, y dado que las variables están normalizadas
+$N=1$. Haciendo esta consideración, solo añadimos un nuevo parámetro, 
+y se obtiene un modelo más sencilla, aunque mejor que el modelo \textit{SIR}, del siguiente modo;
+
+\begin{equation}\label{SIRS}
+  \begin{split}
+    \frac{ds}{dt} = -bs(t)i(t) + \mu (1 - s(t)) ,\\
+    \frac{di}{dt} = bs(t)i(t)-ki(t)-\mu i(t),\\
+    \frac{dr}{dt} = -ki(t) - \mu r(t)\\
+  \end{split}
+\end{equation}
+
+\subsection{Modelo SIRS con vacunación}
+La importancia de estos modelos surge cuando es posible modelar el papel que tiene la vacunación, y existen diversos modelos
+que consiguen esto. En este caso se plantea seguir con una extensión del modelo \textit{SIRS} \ref{Modelo SIRS},
+para ello se introducen dos nuevos parámetros, $\gamma_1, \gamma_2 \in (0,1)$, que representan la tasa de recién nacidos
+y de individuos susceptibles que son vacunados, respectivamente.\\ 
+
+El sistema de ecuaciones diferenciales que define el modelo \textit{SIR} incluyendo la dinámica vital y
+la vacunación \cite{SIRS-VAC} está dado por;
+
+\begin{equation}\label{SIRS-VAC}
+  \begin{split}
+    \frac{ds}{dt} = -bs(t)i(t) + \mu (1 - s(t) -\gamma_1) - \gamma_2 s(t),\\
+    \frac{di}{dt} = bs(t)i(t)-ki(t)-\mu i(t),\\
+    \frac{dr}{dt} = -ki(t) + \mu (\gamma_1 - r(t)) + \gamma_2 s(t) \\
+  \end{split}
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%% SECCIONES FINALES %%%%%%%%%%% 
@@ -457,7 +521,7 @@ $k \in [0.1, 0.6]$ y $b \in [0.5, 2]$.
 
 
 \ifCLASSOPTIONcaptionsoff
-  \newpage
+	\newpage
 \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -465,58 +529,60 @@ $k \in [0.1, 0.6]$ y $b \in [0.5, 2]$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{thebibliography}{1}
 
-  \bibitem{Ross}
-  Ross R.. The prevention of malaria (2nd edition, with Addendum). John
-  Murray, London. 1911.
-  \bibitem{Kermack}
-  Kermack, W. O. and McKendrick, A. G. . A Contribution to the
-  Mathematical Theory of Epidemics
-  Royal Society of London Proceedings Series A. 1927;115:700–721.
-  \bibitem{compartimientos}
-  J. Aracil. Introducción a la dinámica de sistemas. Alianza Universidad Textos.
-  Mexico. 1986.Biosciences Subseries. Springer 2008
-  \bibitem{SIDA}
-  Driessche P. Wu J. (Eds.). Mathematical Epidemiology (Lecture Notes in
-  Mathematics / Mathematical
-  Biosciences Subseries). Springer 2008.
-  \bibitem{Rubeola}
-  Brauer, F. and Castillo-Chávez, C. . Mathematical Models in Population
-  Biology and Epidemiology.
-  Springer, New York 2012.
-  \bibitem{Dengue}
-  Esteva L. Vargas C.. Analysis of a dengue disease transmission model.
-  Mathemtical Biosciences.
-  1998;150:131–151.
-  \bibitem{Influenza}
-  Pava E. De. Modelado Matemático de la transmisión de gripe AH1N1.
-  Matemáticas Enseï£¡anza
-  Universitaria.. 2010;XVIII:1–10.
-  \bibitem{Vacunacion}
-  Hernández, M. E. (2021). Vacunación óptima para un modelo SIRS. Revista
-  De Educación Matemática, 29(2).
-  Recuperado a partir de
-  \url{https://revistas.unc.edu.ar/index.php/REM/article/view/10055}.
-  \bibitem{Anderson}
-  Anderson R. M.. Population Dynamics of infectious diseases: Theory and
-  Application. Chapman
-  Hall, London 1982.
-  \bibitem{Sulucion_analitica}
-  Alexsandro M. Carvalho and Sebastián Gon¸calves. An Algebraic Solution
-  for the Kermack-McKendrick Model, sep-2016.
-  arXiv e-prints, 1609.09313, physics.soc-ph.
-  \bibitem{GitHub}
-  Andres Valencia and Nicolas Aguilera, Project: Propagación de
-  enfermedades in C++
-  Fisica Computacional, Enero-2023, Cali Valle.
-  \url{https://github.com/niaggar/propagacion-de-enfermedades-project}.
-  \bibitem{Runge-kutta}
-  J. Arrieta, R. Ferreira, R. Pardo y A. Rodríguez-Bernal. Análisis Numérico
-  de Ecuaciones Diferenciales Ordinarias.
-  Paraninfo, Madrid, 2020. ISBN 9788428344418, ISBN 8428344418.
-  \bibitem{Modelos de propagacion}
-  Fred Brauer, Modelos de la propagación de enfermedades infecciosas,
-  Universidad Autónoma de Occidente, 2015. ISBN	958871365X, 9789588713656.
-
+	\bibitem{Ross}
+	Ross R.. The prevention of malaria (2nd edition, with Addendum). John
+	Murray, London. 1911.
+	\bibitem{Kermack}
+	Kermack, W. O. and McKendrick, A. G. . A Contribution to the
+	Mathematical Theory of Epidemics
+	Royal Society of London Proceedings Series A. 1927;115:700–721.
+	\bibitem{compartimientos}
+	J. Aracil. Introducción a la dinámica de sistemas. Alianza Universidad Textos.
+	Mexico. 1986.Biosciences Subseries. Springer 2008
+	\bibitem{SIDA}
+	Driessche P. Wu J. (Eds.). Mathematical Epidemiology (Lecture Notes in
+	Mathematics / Mathematical
+	Biosciences Subseries). Springer 2008.
+	\bibitem{Rubeola}
+	Brauer, F. and Castillo-Chávez, C. . Mathematical Models in Population
+	Biology and Epidemiology.
+	Springer, New York 2012.
+	\bibitem{Dengue}
+	Esteva L. Vargas C.. Analysis of a dengue disease transmission model.
+	Mathemtical Biosciences.
+	1998;150:131–151.
+	\bibitem{Influenza}
+	Pava E. De. Modelado Matemático de la transmisión de gripe AH1N1.
+	Matemáticas Enseï£¡anza
+	Universitaria.. 2010;XVIII:1–10.
+	\bibitem{Vacunacion}
+	Hernández, M. E. (2021). Vacunación óptima para un modelo SIRS. Revista
+	De Educación Matemática, 29(2).
+	Recuperado a partir de
+	\url{https://revistas.unc.edu.ar/index.php/REM/article/view/10055}.
+	\bibitem{Anderson}
+	Anderson R. M.. Population Dynamics of infectious diseases: Theory and
+	Application. Chapman
+	Hall, London 1982.
+	\bibitem{Sulucion_analitica}
+	Alexsandro M. Carvalho and Sebastián Gon¸calves. An Algebraic Solution
+	for the Kermack-McKendrick Model, sep-2016.
+	arXiv e-prints, 1609.09313, physics.soc-ph.
+	\bibitem{GitHub}
+	Andres Valencia and Nicolas Aguilera, Project: Propagación de
+	enfermedades in C++
+	Fisica Computacional, Enero-2023, Cali Valle.
+	\url{https://github.com/niaggar/propagacion-de-enfermedades-project}.
+	\bibitem{Runge-kutta}
+	J. Arrieta, R. Ferreira, R. Pardo y A. Rodríguez-Bernal. Análisis Numérico
+	de Ecuaciones Diferenciales Ordinarias.
+	Paraninfo, Madrid, 2020. ISBN 9788428344418, ISBN 8428344418.
+	\bibitem{Modelos de propagacion}
+	Fred Brauer, Modelos de la propagación de enfermedades infecciosas,
+	Universidad Autónoma de Occidente, 2015. ISBN	958871365X, 9789588713656.
+  \bibitem{SIRS-VAC}
+  García Piñera Andrea, Modelos de ecuaciones diferenciales para la propagación de enfermedades.
+  2014, \url{http://hdl.handle.net/10902/7125}
 \end{thebibliography}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
