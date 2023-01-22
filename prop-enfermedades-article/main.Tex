@@ -366,7 +366,7 @@ una \textit{Clase}, que recibe como parámetro
 el modelo a implementar.
 
 %%%%VALORES INICIAALES&&&&&&&&&&&&&&&
-\subsection{Valores iniciales y parámetros}
+\subsection{Valores iniciales y parámetros}\label{valores inciales y parametros}
 \subsubsection{Valores iniciales}
 Para la ejecución de la simulación es necesario un problema de valor inicial,
 así que se escribe un comando que permita
@@ -430,7 +430,40 @@ En nuestro caso particular es de interés solucionar el sistema, para 4 parejas 
 
 \section{Simulaciones y pruebas}
 
-% \emph{testbench} o pruebas realizadas, graficas 
+%%Escribir las pruebas y simulaciones realizadas
+Se ha realizado el codigo en \texttt{C++} que permite simular el modelo \textit{SIR}, y se ha probado
+con los valores iniciales y parámetros mencionados en la sección \ref{valores inciales y parametros}, 
+en especial se toman 4 parejas de parámetros $b$ y $k$;
+\begin{equation}
+	\begin{split}
+		b= 0.5  \quad k = 1/3\\
+		b= 0.8 \quad k = 0.1\\
+		b= 1.2 \quad k = 0.4\\
+		b= 1.6 \quad k = 0.5\\
+		b= 2 \quad k = 0.6\\
+	\end{split}
+\end{equation}
+
+A continuación se presenta la simulación realizada, para 100 días con un tamaño de paso de $0.5$ días;
+%%IMAGENES DE SIMULACIONES CON LOS VALORES DE b Y k
+% \begin{figure}[h]
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{simulacion1.png}
+% 	\caption{Simulación para $b=0.5$ y $k=1/3$}
+% 	\label{simulacion1}
+% \end{figure}
+
+La idea ha ido más allá, y con la intención de explorar más el modelo bajo diferentes parámetros, se ha realizado
+una representación 3D en una grafica de contorno, en la que se puede observar el 
+comportamiento de la población en función de los parámetros.
+%%IMAGEN DE GRAFICA DE CONTORNO
+
+Esto obliga realizar las graficas para un momento determinado, es decir el tiempo está fijo. Más sin embargo
+para observar el comportamiento de la población en función tanto de los parámetros como del tiempo, se 
+realiza una animación tipo \textit{gif}, en la que se puede observar el comportamiento a través del tiempo. 
+El \textit{gif} se puede observar en la siguiente dirección \href{https://github.com/niaggar/propagacion-de-enfermedades-project}{Propagacion
+de enfermedades} el cual se encuentra tambien dentro del repositorio \cite{GitHub}.
+
 
 \section{Acercamiento a otros modelos}
 %IMPLEMENTACION DEL CODIGO A OTROS MODELOS, SIRS Y SRIS CON VACUNACION
@@ -470,8 +503,8 @@ Donde se han introducido dos nuevos parámetros, $\mu > 0$ como la tasa de morta
 (este se debe restar a todas las poblaciones), y $B$ que representa la tasa de nacimientos, recién nacidos que se suman
 a la población de susceptibles.\\ 
 
-Pero por simplicidad hemos dicho que se mantendrá la suposición \ref{suposicion}, la población
-total se mantendrá constante, por lo que necesariamente $B = \mu N$, y dado que las variables están normalizadas
+Pero por simplicidad hemos dicho que se mantendrá la suposición \ref{suposicion}, es decir la población
+total será constante, por lo que necesariamente $B = \mu N$, y dado que las variables están normalizadas
 $N=1$. Haciendo esta consideración, solo añadimos un nuevo parámetro, 
 y se obtiene un modelo más sencilla, aunque mejor que el modelo \textit{SIR}, del siguiente modo;
 
