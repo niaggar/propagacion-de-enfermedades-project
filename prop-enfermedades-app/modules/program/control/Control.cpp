@@ -5,7 +5,7 @@ Control::Control() {}
 
 void Control::UseNewProject()
 {
-    string projectName = GetString("Introduzca el nombre del proyecto");
+    string projectName = GetString("Enter project name");
     string path = PATH + "/" + projectName;
     mkdir(path.c_str(), 0777);
 
@@ -13,8 +13,8 @@ void Control::UseNewProject()
 
     vector<double> initialValues = GetInitialValues();
 
-    bool useModel = GetBool("¿Desea usar un modelo en concreto? (por defecto se usran todos los modelos)");
-    bool normalize = GetBool("¿Desea normalizar los datos? (por defecto no se normalizan)");
+    bool useModel = GetBool("Do you want to use a specific model (all models are used by default)?");
+    bool normalize = GetBool("Do you want to normalize the data (by default they are not normalized)?");
 
     double N = initialValues[0] + initialValues[1] + initialValues[2];
     if (normalize)
@@ -44,11 +44,11 @@ void Control::UseNewProject()
         DoSimulation(model, initialValues, constants, path);
         Phase(path, modelType);
 
-        cout << "Se ha guardado el resultado del modelo " << model->modelName << " en: " << path << endl;
+        cout << "The result of the model has been saved " << model->modelName << " in: " << path << endl;
     }
     else
     {
-        cout << "Se usaran todos los modelos" << endl;
+        cout << "All models will be used" << endl;
 
         Model *model = new Model[3];
         SirModel *sirModel = new SirModel();
@@ -65,7 +65,7 @@ void Control::UseNewProject()
             SaveData(path + "/const-" + model[i].modelName + ".dat", constants);
             DoSimulation(&model[i], initialValues, constants, path);
 
-            cout << "Se ha guardado el resultado del modelo " << model[i].modelName << " en: " << path << endl;
+            cout << "The result of the model has been saved " << model[i].modelName << " in: " << path << endl;
         }
     }
 }
@@ -139,7 +139,7 @@ void Control::Run()
 {
     cout << "Welcome to the program" << endl;
     cout << "-----------------------" << endl;
-    bool newProject = GetBool("Desea iniciar un nuevo proyecto? (y/n)");
+    bool newProject = GetBool("Do you want to start a new project? (y/n)");
     cout << "-----------------------" << endl;
 
 

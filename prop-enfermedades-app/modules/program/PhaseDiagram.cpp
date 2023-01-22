@@ -82,7 +82,7 @@ void Phase(string projectRoute, ModelType modelType)
     fprintf(gnuplotPipe, "set terminal pngcairo enhanced color size 1200,800\n");
     fprintf(gnuplotPipe, "set output \"%s\"\n", (projectRoute + "/phase-" + model->modelName + ".png").c_str());
     fprintf(gnuplotPipe, "set title \"Diagrama de fase\"\n");
-    fprintf(gnuplotPipe, "set xlabel \"Population /Total  = P\"\n");
+    fprintf(gnuplotPipe, "set xlabel \"Población / Población total  = P\"\n");
     fprintf(gnuplotPipe, "set ylabel \"DP/dt\"\n");
     fprintf(gnuplotPipe, "set grid\n");
     fprintf(gnuplotPipe, "plot \"%s\" using 1:2 w l lw 4 lc \"#17bebb\" title \"Suceptibles\", \"%s\" using 3:4 w l lw 4 lc \"#2e282a\" title \"Infected\", \"%s\" using 5:6 w l lw 4 lc \"#cd5334\" title \"Recovered\"\n", PhaseDataRoute.c_str(), PhaseDataRoute.c_str(), PhaseDataRoute.c_str());

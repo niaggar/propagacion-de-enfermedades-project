@@ -27,7 +27,7 @@ double **ReadData(string fileRoute, PopulationType populationType)
 
     if (!file)
     {
-        cout << "Error al abrir el fichero" << endl;
+        cout << "Error opening the file" << endl;
     }
     else
     {

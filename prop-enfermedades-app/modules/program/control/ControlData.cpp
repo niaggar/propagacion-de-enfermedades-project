@@ -9,7 +9,7 @@ ModelType Control::GetModelType()
          << "2. SIRS" << endl;
     cout << "\t"
          << "3. SIRSV" << endl;
-    int modelType = GetIntRange("Introduce el tipo de modelo", 1, 3);
+    int modelType = GetIntRange("Enter the type of model", 1, 3);
     cout << "-----------------------" << endl;
     cout << endl;
 
@@ -36,7 +36,7 @@ vector<double> Control::GetConstants(ModelType modelType)
     vector<double> constants;
     for (int i = 0; i < constantsName->size(); i++)
     {
-        constants.push_back(GetDouble("Introduce el valor de: " + constantsName->at(i)));
+        constants.push_back(GetDouble("Enter the value of: " + constantsName->at(i)));
     }
     cout << "-----------------------" << endl;
     cout << endl;
@@ -49,13 +49,13 @@ vector<double> Control::GetInitialValues()
     vector<double> initialValues;
 
     cout << "------ Get initial values ------" << endl;
-    initialValues.push_back(GetDouble("Introduce el valor de la poblacion SUCEPTIBLE"));
-    initialValues.push_back(GetDouble("Introduce el valor de la poblacion INFECTADA"));
-    initialValues.push_back(GetDouble("Introduce el valor de la poblacion REMOVIDA"));
+    initialValues.push_back(GetDouble("Enter the value of the SUCEPTIBLE population"));
+    initialValues.push_back(GetDouble("Enter the value of the INFECTED population"));
+    initialValues.push_back(GetDouble("Enter the value of the REMOVED population"));
     cout << endl;
-    initialValues.push_back(GetDouble("Introduce el valor del tiempo INICIAL"));
-    initialValues.push_back(GetDouble("Introduce el valor del tiempo FINAL"));
-    initialValues.push_back(GetDouble("Introduce el valor del PASO"));
+    initialValues.push_back(GetDouble("Enter the value of the INITIAL time"));
+    initialValues.push_back(GetDouble("Enter the FINAL time value"));
+    initialValues.push_back(GetDouble("Enter the STEP value"));
     cout << "-----------------------" << endl;
     cout << endl;
 
