@@ -1,4 +1,8 @@
 #include "Runge4.h"
+#include <iostream>
+
+using namespace std;
+
 
 Runge4::Runge4() {}
 
@@ -70,20 +74,21 @@ void Runge4::DoMethod(vector<double> initialConditions)
     result[2][j] = i;
     result[3][j] = r;
 
-    while (t < tmax)
+    for (j = 1; j < n; j++)
     {
-        double *calc = Calc(t, dt, s, i, r);
         t += dt;
-        s = calc[0];
-        i = calc[1];
-        r = calc[2];
+        
+        double *res = Calc(t, dt, s, i, r);
+        s = res[0];
+        i = res[1];
+        r = res[2];
 
-        j++;
         result[0][j] = t;
         result[1][j] = s;
         result[2][j] = i;
         result[3][j] = r;
     }
+    
 
     this->result = result;
     this->length = n;

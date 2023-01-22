@@ -34,7 +34,7 @@ vector<double> Control::GetConstants(ModelType modelType)
 
     cout << "------ Get constants values ------" << endl;
     vector<double> constants;
-    for (int i = 0; i < constantsName->size(); i++)
+    for (int i = 0; i < (int)constantsName->size(); i++)
     {
         constants.push_back(GetDouble("Enter the value of: " + constantsName->at(i)));
     }

@@ -5,10 +5,6 @@
 #include <stdio.h>
 #include "program.h"
 #include "./images/Images.h"
-#include "../methods/models/SirModel.h"
-#include "../methods/models/SirsModel.h"
-#include "../methods/models/SirsVacModel.h"
-
 
 using namespace std;
 
@@ -19,22 +15,8 @@ using namespace std;
 /// @param i infectados
 /// @param r recuperados
 /// @return Grafica de la derivada de la poblacion contra la poblacion
-void Phase(string projectRoute, ModelType modelType)
+void Phase(string projectRoute, Model *model)
 {
-    Model *model;
-    switch (modelType)
-    {
-    case ModelType::SIR:
-        model = new SirModel();
-        break;
-    case ModelType::SIRS:
-        model = new SirsModel();
-        break;
-    case ModelType::SIRSV:
-        model = new SirsVacModel();
-        break;
-    }
-
     string name_data = projectRoute + "/result-" + model->modelName + ".dat";
     double **infValues = ReadData(name_data, PopulationType::Infected);
     double **sucValues = ReadData(name_data, PopulationType::Susceptible);
@@ -59,8 +41,6 @@ void Phase(string projectRoute, ModelType modelType)
         double dS = model->Susceptible(infValues[0][i], sucValues[1][i], infValues[1][i], remValues[1][i]);
         double dI = model->Infected(infValues[0][i], sucValues[1][i], infValues[1][i], remValues[1][i]);
         double dR = model->Removed(infValues[0][i], sucValues[1][i], infValues[1][i], remValues[1][i]);
-
-        cout << dS << " " << dI << " " << dR << endl;
 
         listDS[i] = dS;
         listDI[i] = dI;

@@ -40,9 +40,11 @@ void Control::UseNewProject()
                 break;
         }
 
+        model->SetParameters(constants);
         SaveData(path + "/const-" + model->modelName + ".dat", constants);
-        DoSimulation(model, initialValues, constants, path);
-        Phase(path, modelType);
+        SaveData(path + "/init-" + model->modelName + ".dat", initialValues);
+        DoSimulation(model, initialValues, path);
+        Phase(path, model);
 
         cout << "The result of the model has been saved " << model->modelName << " in: " << path << endl;
     }
@@ -50,30 +52,37 @@ void Control::UseNewProject()
     {
         cout << "All models will be used" << endl;
 
-        Model *model = new Model[3];
-        SirModel *sirModel = new SirModel();
-        SirsModel *sirsModel = new SirsModel();
-        SirsVacModel *sirsvModel = new SirsVacModel();
-
-        model[0] = *sirModel;
-        model[1] = *sirsModel;
-        model[2] = *sirsvModel;
-
+        Model *model;
         for (int i = 0; i < 3; i++)
         {
-            vector<double> constants = GetConstants(model[i].modelType);
-            SaveData(path + "/const-" + model[i].modelName + ".dat", constants);
-            DoSimulation(&model[i], initialValues, constants, path);
+            switch (i)
+            {
+                case 0:
+                    model = new SirModel();
+                    break;
+                case 1:
+                    model = new SirsModel();
+                    break;
+                case 2:
+                    model = new SirsVacModel();
+                    break;
+            }
 
-            cout << "The result of the model has been saved " << model[i].modelName << " in: " << path << endl;
+            vector<double> constants = GetConstants(model->modelType);
+            model->SetParameters(constants);
+
+            SaveData(path + "/const-" + model->modelName + ".dat", constants);
+            SaveData(path + "/init-" + model->modelName + ".dat", initialValues);
+            DoSimulation(model, initialValues, path);
+            Phase(path, model);
+
+            cout << "The result of the model has been saved " << model->modelName << " in: " << path << endl;
         }
     }
 }
 
-void Control::DoSimulation(Model *model, vector<double> initialValues, vector<double> constants, string path)
+void Control::DoSimulation(Model *model, vector<double> initialValues, string path)
 {
-    model->SetParameters(constants);
-
     string pathResult = path + "/result-" + model->modelName + ".dat";
     string pathGraph = path + "/graph-" + model->modelName + ".png";
 
@@ -97,7 +106,7 @@ void Control::SaveData(string path, vector<double> data)
 {
     ofstream file;
     file.open(path);
-    for (int i = 0; i < data.size(); i++)
+    for (int i = 0; i < (int)data.size(); i++)
     {
         file << data[i] << endl;
     }

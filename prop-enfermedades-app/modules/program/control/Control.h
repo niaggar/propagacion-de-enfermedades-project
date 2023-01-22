@@ -31,7 +31,7 @@ class Control
         void UseNewProject();
         void UseExistingProject();
 
-        void DoSimulation(Model *, vector<double>, vector<double>, string);
+        void DoSimulation(Model *, vector<double>, string);
         void SaveData(string, vector<double>);
         vector<double> LoadData(string);
     public:
@@ -39,6 +39,8 @@ class Control
 
         string GetProjectName();
         ModelType GetModelType();
+        /// @brief Obtener los valores iniciales del modelo
+        /// @return [0] S0, [1] I0, [2] R0, [3] T0, [4] TF, [5] Dt
         vector<double> GetInitialValues();
         vector<double> GetConstants(ModelType);
 

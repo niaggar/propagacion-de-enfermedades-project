@@ -7,7 +7,7 @@ string Control::GetProjectName()
     vector<string> foldersName = GetFoldersName();
     PrintFoldersName(foldersName);
 
-    int option = GetIntRange("Select a project", 0, foldersName.size() - 1);
+    int option = GetIntRange("Select a project", 0, (int)foldersName.size() - 1);
 
     cout << "Project selected: " << foldersName[option] << endl;
     cout << "-----------------------" << endl;
@@ -44,7 +44,7 @@ vector<string> Control::GetFoldersName()
 void Control::PrintFoldersName(vector<string> foldersName)
 {
     cout << "Projects name: " << endl;
-    for (int i = 0; i < foldersName.size(); i++)
+    for (int i = 0; i < (int)foldersName.size(); i++)
     {
         cout << "\t" << i << ") - " << foldersName[i] << endl;
     }
