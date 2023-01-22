@@ -58,15 +58,7 @@ void Phase(string projectRoute, Model *model)
     for (int i = 0; i < len; i++)
         file << sucValues[1][i] << " " << listDS[i] << " " << infValues[1][i] << " " << listDI[i] << " " << remValues[1][i] << " " << listDR[i] << endl;
 
-    FILE *gnuplotPipe = popen("gnuplot -persist", "w");
-    fprintf(gnuplotPipe, "set terminal pngcairo enhanced color size 1200,800\n");
-    fprintf(gnuplotPipe, "set output \"%s\"\n", (projectRoute + "/phase-" + model->modelName + ".png").c_str());
-    fprintf(gnuplotPipe, "set title \"Diagrama de fase\"\n");
-    fprintf(gnuplotPipe, "set xlabel \"Población / Población total  = P\"\n");
-    fprintf(gnuplotPipe, "set ylabel \"DP/dt\"\n");
-    fprintf(gnuplotPipe, "set grid\n");
-    fprintf(gnuplotPipe, "plot \"%s\" using 1:2 w l lw 4 lc \"#17bebb\" title \"Suceptibles\", \"%s\" using 3:4 w l lw 4 lc \"#2e282a\" title \"Infected\", \"%s\" using 5:6 w l lw 4 lc \"#cd5334\" title \"Recovered\"\n", PhaseDataRoute.c_str(), PhaseDataRoute.c_str(), PhaseDataRoute.c_str());
-    fflush(gnuplotPipe);
-    pclose(gnuplotPipe);
+    Images *images = new Images();
+    images->GeneratePhasePlot(PhaseDataRoute, projectRoute + "/phase-" + model->modelName + ".png");
 }
 

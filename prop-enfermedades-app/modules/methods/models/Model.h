@@ -18,6 +18,9 @@ class Model
 
         ModelType modelType;
         string modelName;
+        string modelDescription;
+        string modelEquations;
+        vector<string> modelParameters;
 
         virtual void SetN(int);
         virtual void SetParameters(vector<double>);

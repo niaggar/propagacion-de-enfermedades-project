@@ -4,6 +4,9 @@ SirModel::SirModel()
 {
     this->modelType = ModelType::SIR;
     this->modelName = "SIR";
+    this->modelDescription = "Modelo SIR, que representa la propagación de una enfermedad infecciosa en una población.";
+    this->modelEquations = "S' = -b * S * I \\\\ I' = b * S * I - k * I \\\\ R' = k * I";
+    this->modelParameters = { "b", "k" };
 }
 
 void SirModel::SetParameters(vector<double> values)

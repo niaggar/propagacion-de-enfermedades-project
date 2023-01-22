@@ -30,6 +30,7 @@ class Control
         void PrintFoldersName(vector<string>);
         void UseNewProject();
         void UseExistingProject();
+        Model *GetModel(ModelType);
 
         void DoSimulation(Model *, vector<double>, string);
         void SaveData(string, vector<double>);
@@ -43,6 +44,8 @@ class Control
         /// @return [0] S0, [1] I0, [2] R0, [3] T0, [4] TF, [5] Dt
         vector<double> GetInitialValues();
         vector<double> GetConstants(ModelType);
+
+        void GenerateLatexReport(string, Model *, string);
 
         /// @brief Metodo que se encarga de la ejecucion del programa
         void Run();
