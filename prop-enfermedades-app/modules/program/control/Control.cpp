@@ -45,7 +45,7 @@ void Control::UseNewProject()
         SaveData(path + "/init-" + model->modelName + ".dat", initialValues);
         DoSimulation(model, initialValues, path);
         Phase(path, model);
-
+        Contour(path, new SirModel(), initialValues);
         cout << "The result of the model has been saved " << model->modelName << " in: " << path << endl;
     }
     else

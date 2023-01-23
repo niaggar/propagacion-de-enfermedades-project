@@ -3,6 +3,10 @@
         "*.tcc": "cpp",
         "iostream": "cpp",
         "ostream": "cpp",
-        "fstream": "cpp"
-    }
+        "fstream": "cpp",
+        "cmath": "cpp"
+    },
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "master"
+    ]
 }

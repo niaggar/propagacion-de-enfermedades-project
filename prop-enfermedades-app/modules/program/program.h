@@ -12,5 +12,6 @@ double **ReadData(string, PopulationType);
 double *Maximum(string a, PopulationType b);
 double *Maximum(double **, PopulationType b);
 void Phase(string name_data, Model *);
+void Contour(string projectRoute, Model *model, vector<double> initialValues);
 
 #endif
