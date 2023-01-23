@@ -78,10 +78,9 @@ void Contour(string projectRoute, vector<double> initialConditions)
 
             for (int ki = 0; ki <= n_const; ki++) // j = k
             {
-                s = inmediatamenteAnteriores[ti][bi][ki][0];
-                i = inmediatamenteAnteriores[ti][bi][ki][1];
-                r = inmediatamenteAnteriores[ti][bi][ki][2];
-
+                s = inmediatamenteAnteriores[ti > 0 ? ti - 1 : 0][bi > 0 ? bi - 1 : 0][ki > 1 ? ki - 1 : 0][0];
+                i = inmediatamenteAnteriores[ti > 0 ? ti - 1 : 0][bi > 0 ? bi - 1 : 0][ki > 1 ? ki - 1 : 0][1];
+                r = inmediatamenteAnteriores[ti > 0 ? ti - 1 : 0][bi > 0 ? bi - 1 : 0][ki > 1 ? ki - 1 : 0][2];
                 file << constants[0] << " " << constants[1] << " " << s  << " " << i  << " " << r  << endl;
                 
                 Runge4 *runge4 = new Runge4();
