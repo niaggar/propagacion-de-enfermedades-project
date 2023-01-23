@@ -13,13 +13,13 @@ using namespace std;
 /// @param projectRoute Nombre de la ruta
 /// @param model Modelo de la poblacion
 /// @return Gif de la poblacion en funcion de los parametros a lo largo del tiempo
-void Contour(string projectRoute, Model *model, vector<double> initialValues)
+void Contour(string projectRoute, vector<double> initialValues)
 {
     vector<double> constants;
     constants[0] = 0.5;
     constants[1] = 0.1;
 
-    model = new SirModel(); 
+    SirModel *model = new SirModel(); 
 
     for(int i=0; i<=10; i++)
     {   for(int j=0; j<=10; j++)
