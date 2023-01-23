@@ -23,11 +23,7 @@ LFLAGS =
 LIBS =
 
 # define the C source files
-<<<<<<< HEAD
-SRCS = 	main.cpp ./modules/methods/models/Model.cpp ./modules/methods/models/SirModel.cpp ./modules/methods/models/SirsModel.cpp ./modules/methods/models/SirsVacModel.cpp ./modules/methods/Runge4.cpp ./modules/program/FindMax.cpp ./modules/program/control/Control.cpp ./modules/program/control/ControlFolder.cpp ./modules/program/control/ControlData.cpp ./modules/program/ReadData.cpp ./modules/program/WriteData.cpp ./modules/program/images/Images.cpp ./modules/program/PhaseDiagram.cpp ./modules/program/ContourPlot.cpp
-=======
-SRCS = 	main.cpp ./modules/methods/models/Model.cpp ./modules/methods/models/SirModel.cpp ./modules/methods/models/SirsModel.cpp ./modules/methods/models/SirsVacModel.cpp ./modules/methods/Runge4.cpp ./modules/program/FindMax.cpp ./modules/program/control/Control.cpp ./modules/program/control/ControlFolder.cpp ./modules/program/control/ControlData.cpp ./modules/program/control/ControlProject.cpp ./modules/program/control/ControlReport.cpp ./modules/program/ReadData.cpp ./modules/program/WriteData.cpp ./modules/program/images/Images.cpp ./modules/program/PhaseDiagram.cpp
->>>>>>> 0238700cb372e3c6f14024c12b3ac017d6cfa27c
+SRCS = 	main.cpp ./modules/methods/models/Model.cpp ./modules/methods/models/SirModel.cpp ./modules/methods/models/SirsModel.cpp ./modules/methods/models/SirsVacModel.cpp ./modules/methods/Runge4.cpp ./modules/program/FindMax.cpp ./modules/program/control/Control.cpp ./modules/program/control/ControlFolder.cpp ./modules/program/control/ControlData.cpp ./modules/program/control/ControlProject.cpp ./modules/program/control/ControlReport.cpp ./modules/program/ReadData.cpp ./modules/program/WriteData.cpp ./modules/program/images/Images.cpp ./modules/program/PhaseDiagram.cpp ./modules/program/ContourPlot.cpp
 
 # define the C object files
 #

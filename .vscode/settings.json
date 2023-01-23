@@ -4,7 +4,8 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "fstream": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "vector": "cpp"
     },
     "githubPullRequests.ignoredPullRequestBranches": [
         "master"

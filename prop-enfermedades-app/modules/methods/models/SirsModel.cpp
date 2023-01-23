@@ -4,7 +4,7 @@ SirsModel::SirsModel()
 {
     this->modelType = ModelType::SIRS;
     this->modelName = "SIRS";
-    this->modelDescription = "Modelo SIRS, que representa la propagación de una enfermedad infecciosa en una población considerando nacimientos y defunciones.";
+    this->modelDescription = "SIRS model, which represents the spread of an infectious disease in a population considering births and deaths.";
     this->modelEquations = "S' = -(b * S * I) - (m * S) + (m * N) \\\\ I' = (b * S * I) - (v * I) - (m * I) \\\\ R' = (v * I) - (m * R)";
     this->modelParameters = { "b", "m", "v" };
 }
