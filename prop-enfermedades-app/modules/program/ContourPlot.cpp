@@ -81,7 +81,7 @@ void Contour(string projectRoute, vector<double> initialConditions)
                 s = inmediatamenteAnteriores[ti > 0 ? ti - 1 : 0][bi > 0 ? bi - 1 : 0][ki > 1 ? ki - 1 : 0][0];
                 i = inmediatamenteAnteriores[ti > 0 ? ti - 1 : 0][bi > 0 ? bi - 1 : 0][ki > 1 ? ki - 1 : 0][1];
                 r = inmediatamenteAnteriores[ti > 0 ? ti - 1 : 0][bi > 0 ? bi - 1 : 0][ki > 1 ? ki - 1 : 0][2];
-                file << constants[0] << " " << constants[1] << " " << s  << " " << i  << " " << r  << endl;
+                file << constants[1] << " " << constants[0] << " " << s  << " " << i  << " " << r  << endl;
                 
                 Runge4 *runge4 = new Runge4();
                 vector<double> constantsV = { constants[0], constants[1] };
@@ -102,28 +102,32 @@ void Contour(string projectRoute, vector<double> initialConditions)
                 delete runge4;
             }
 
+            file << endl;            
+
             constants[1] = constants[1] + db;
         }
         
         t = t + dt;
     }
+
+        FILE *gnuplotPipe = popen("gnuplot -persist", "w");
+    for (int i = 0; i < n_runge; i++)
+    {
+        string cotourRoute = contourData + "/contour-" + to_string(i) + ".dat";
+        string imgRoute = contourData + "/contour-" + to_string(i) + ".png";
+        fprintf(gnuplotPipe, "set terminal pngcairo enhanced color size 1200,800\n");
+        fprintf(gnuplotPipe, "set output \"%s\"\n", imgRoute.c_str());
+        fprintf(gnuplotPipe, "set title \"Diagrama de fase\"\n");
+        fprintf(gnuplotPipe, "set xlabel \"Parámetro b\"\n");
+        fprintf(gnuplotPipe, "set ylabel \"Parámetro k\"\n");
+        fprintf(gnuplotPipe, "set zlabel \"Poblacion\"\n");
+        fprintf(gnuplotPipe, "set palette rgb 23,28,3\n");
+        fprintf(gnuplotPipe, "set grid\n");
+        fprintf(gnuplotPipe, "splot \"%s\" u 1:2:4 w pm3d title \"Infected\"\n", cotourRoute.c_str());
+        fprintf(gnuplotPipe, "unset output\n");
+        fflush(gnuplotPipe);
+    }
+    pclose(gnuplotPipe);
 }
 
-//     FILE *gnuplotPipe = popen("gnuplot -persist", "w");
-//     fprintf(gnuplotPipe, "set terminal pngcairo enhanced color size 1200,800\n");
-//     fprintf(gnuplotPipe, "set output \"%s\"\n", (projectRoute + "/phase-" + model->modelName + ".png").c_str());
-//     fprintf(gnuplotPipe, "set title \"Diagrama de fase\"\n");
-//     fprintf(gnuplotPipe, "set xlabel \"Parámetro b\"\n");
-//     fprintf(gnuplotPipe, "set ylabel \"Parámetro k\"\n");
-//     fprintf(gnuplotPipe, "set zlabel \"Poblacion\"\n");
-//     fprintf(gnuplotPipe, "set grid\n");
-//     fprintf(gnuplotPipe, "splot \"%s\" u 1:2:3 w pm3d title \"Suceptibles\", \"%s\" using 3:4 w l lw 4 lc \"#2e282a\" title \"Infected\", \"%s\" using 5:6 w l lw 4 lc \"#cd5334\" title \"Recovered\"\n", contour_data.c_str(), contour_data.c_str(), contour_data.c_str());
-//     fflush(gnuplotPipe);
-//     pclose(gnuplotPipe);
-// }
 
-// set xlabel 'Nombre del eje'
-// set ylabel 'Nombre del eje'
-// set zlabel 'Nombre del eje'
-
-// splot 'datos.dat' w pm3d
