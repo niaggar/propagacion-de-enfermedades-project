@@ -23,7 +23,12 @@ class Runge4
         double **result;
         /// @brief Longitud del resultado length(t[n], s[n], i[n], r[n]) = n
         double length;
-        
+    public:
+        Runge4();
+
+        /// @brief Establece el modelo a resolver
+        /// @param model Modelo a resolver
+        void SetModel(Model *);
         /// @brief Calcula los valores de las derivadas
         /// @param t tiempo del paso actual
         /// @param dt paso de tiempo
@@ -32,12 +37,6 @@ class Runge4
         /// @param r poblacion removida
         /// @return Arreglo con los nuevos valores de la poblacion [s, i, r]
         double *Calc(double, double, double, double, double);
-    public:
-        Runge4();
-
-        /// @brief Establece el modelo a resolver
-        /// @param model Modelo a resolver
-        void SetModel(Model *);
         /// @brief Ejecuta el metodo de Runge-Kutta de orden 4
         /// @param t tiempo inicial
         /// @param dt paso de tiempo

@@ -31,8 +31,9 @@ void Control::UseNewProject()
         SaveData(path + "/const-" + model->modelName + ".dat", constants);
         SaveData(path + "/init-" + model->modelName + ".dat", initialValues);
         DoSimulation(model, initialValues, path);
-        Phase(path, model);
-        GenerateLatexReport(path, model, projectName);
+        // Phase(path, model);
+        // GenerateLatexReport(path, model, projectName);
+        Contour(path, initialValues);
 
         cout << "The result of the model has been saved " << model->modelName << " in: " << path << endl;
     }
@@ -94,8 +95,8 @@ void Control::DoSimulation(Model *model, vector<double> initialValues, string pa
     double maxTime = initialValues[4];
 
     Images *images = new Images();
-    images->GenerateBasicPlot(pathResult, pathGraph);
-    images->GererateBasicGif(model, path, size, startTime, maxTime, population);
+    // images->GenerateBasicPlot(pathResult, pathGraph);
+    // images->GererateBasicGif(model, path, size, startTime, maxTime, population);
 
     delete runge4;
     delete images;
