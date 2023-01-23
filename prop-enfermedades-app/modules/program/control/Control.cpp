@@ -2,6 +2,7 @@
 
 Control::Control() {}
 
+<<<<<<< HEAD
 
 void Control::UseNewProject()
 {
@@ -144,13 +145,14 @@ void Control::UseExistingProject()
 }
 
 
+=======
+>>>>>>> 0238700cb372e3c6f14024c12b3ac017d6cfa27c
 void Control::Run()
 {
     cout << "Welcome to the program" << endl;
     cout << "-----------------------" << endl;
     bool newProject = GetBool("Do you want to start a new project? (y/n)");
     cout << "-----------------------" << endl;
-
 
     if (newProject)
     {

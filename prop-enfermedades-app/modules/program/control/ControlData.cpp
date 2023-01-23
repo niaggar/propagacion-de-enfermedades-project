@@ -1,5 +1,30 @@
 #include "Control.h"
 
+void Control::SaveData(string path, vector<double> data)
+{
+    ofstream file;
+    file.open(path);
+    for (int i = 0; i < (int)data.size(); i++)
+    {
+        file << data[i] << endl;
+    }
+    file.close();
+}
+
+vector<double> Control::LoadData(string path)
+{
+    vector<double> data;
+    ifstream file;
+    file.open(path);
+    string line;
+    while (getline(file, line))
+    {
+        data.push_back(stod(line));
+    }
+    file.close();
+    return data;
+}
+
 ModelType Control::GetModelType()
 {
     cout << "------ Get model type ------" << endl;

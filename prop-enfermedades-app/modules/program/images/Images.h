@@ -15,6 +15,7 @@ class Images
 
         void GenerateBasicPlot(string DataRoute, string filename);
         void GeneratePanelesPlot(string DataRoute, string filename);
+        void GeneratePhasePlot(string DataRoute, string filename);
 };
 
 
