@@ -9,11 +9,8 @@
 using namespace std;
 
 /// @brief Funcion que crea el diagrama de fase de una poblacion
-/// @param name_data Nombre del fichero
-/// @param p Tipo de poblacion
-/// @param s susceptibles
-/// @param i infectados
-/// @param r recuperados
+/// @param projectRoute Nombre de la ruta
+/// @param model Modelo de la poblacion
 /// @return Grafica de la derivada de la poblacion contra la poblacion
 void Phase(string projectRoute, Model *model)
 {
