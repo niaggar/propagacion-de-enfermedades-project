@@ -4,7 +4,7 @@ SirsVacModel::SirsVacModel()
 {
     this->modelType = ModelType::SIRSV;
     this->modelName = "SIRSV";
-    this->modelDescription = "Modelo SIRSV, que representa la propagación de una enfermedad infecciosa en una población considerando nacimientos y defunciones, además de la vacunación.";
+    this->modelDescription = "SIRSV model, which represents the spread of an infectious disease in a population considering births and deaths, in addition to vaccination.";
     this->modelEquations = "S' = -(b * S * I) - (m * S) + (m * N) - (g1 * (m * N)) - (g2 * S) \\\\ I' = (b * S * I) - (v * I) - (m * I) \\\\ R' = (v * I) - (m * R) + g1 * (m * N)";
     this->modelParameters = { "b", "m", "v", "g_1", "g_2" };
 }
