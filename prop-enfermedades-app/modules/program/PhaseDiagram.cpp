@@ -54,6 +54,8 @@ void Phase(string projectRoute, Model *model)
     file.open(PhaseDataRoute);
     for (int i = 0; i < len; i++)
         file << sucValues[1][i] << " " << listDS[i] << " " << infValues[1][i] << " " << listDI[i] << " " << remValues[1][i] << " " << listDR[i] << endl;
+    
+    file.close();
 
     Images *images = new Images();
     images->GeneratePhasePlot(PhaseDataRoute, projectRoute + "/phase-" + model->modelName + ".png");

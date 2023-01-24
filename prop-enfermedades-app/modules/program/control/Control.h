@@ -45,7 +45,7 @@ class Control
         vector<double> GetInitialValues();
         vector<double> GetConstants(ModelType);
 
-        void GenerateLatexReport(string, Model *, string);
+        void GenerateLatexReport(string, Model *, string, int);
 
         /// @brief Metodo que se encarga de la ejecucion del programa
         void Run();

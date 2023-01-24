@@ -148,10 +148,17 @@ void Contour(string projectRoute, vector<double> initialConditions)
 
     // Para crear un video:
     // ffmpeg -framerate 5 -pattern_type glob -i './iquepues/contourImage/*.png' -c:v libx264 -vf fps=15 -pix_fmt yuv420p output-video2.mp4
+    // ffmpeg -i input.mp4 output.gif
+
+    string ffmpegVideCommand = "ffmpeg -framerate 5 -pattern_type glob -i '" + contourImageFolder + "/*.png' -c:v libx264 -vf fps=15 -pix_fmt yuv420p " + projectRoute + "/contour-video.mp4";
+    string ffmpegGifCommand = "ffmpeg -i " + projectRoute + "/contour-video.mp4 " + projectRoute + "/contour-video.gif";
+
+    system(ffmpegVideCommand.c_str());
+    system(ffmpegGifCommand.c_str());
 
 
-    string command = "convert -resize 60% -delay 10 -loop 0 " + contourImageFolder + "/contour-*.gif " + projectRoute + "/basic.gif";
-    system(command.c_str());
+    // string command = "convert -resize 60% -delay 10 -loop 0 " + contourImageFolder + "/contour-*.gif " + projectRoute + "/basic.gif";
+    // system(command.c_str());
 }
 
 
