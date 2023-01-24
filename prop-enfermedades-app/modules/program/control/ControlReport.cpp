@@ -4,9 +4,12 @@ void Control::GenerateLatexReport(string projectRoute, Model *modelsUsed, string
 {
     vector<string> initialValuesString = { "S_0", "I_0", "R_0", "t_0", "t_f", "dt" };
 
-
     vector<double> constants;
     vector<double> initialValues;
+
+    // double N = initialValues[0] + initialValues[1] + initialValues[2];
+
+    double*Max = Maximum("data/" + projectName + "/result-" + modelsUsed->modelName + ".dat", Infected);
 
     string pathConstants = projectRoute + "/const-" + modelsUsed->modelName + ".dat";
     string pathInitialValues = projectRoute + "/init-" + modelsUsed->modelName + ".dat";
@@ -75,6 +78,7 @@ void Control::GenerateLatexReport(string projectRoute, Model *modelsUsed, string
     report << "\\end{itemize}" << endl;
 
     report << "\\section*{Results}" << endl;
+    report << "The maximum infected population is " << Max[0] << " is reached on day " << Max[1] << "." << endl;
     report << "Next we show the results of the simulation using the model " << modelsUsed->modelName << " with the parameters and initial values shown above." << endl;
     report << "\\begin{figure}[H]" << endl;
     report << "\\centering" << endl;

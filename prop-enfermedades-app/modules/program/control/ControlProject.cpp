@@ -31,8 +31,8 @@ void Control::UseNewProject()
         SaveData(path + "/const-" + model->modelName + ".dat", constants);
         SaveData(path + "/init-" + model->modelName + ".dat", initialValues);
         DoSimulation(model, initialValues, path);
-        // Phase(path, model);
-        // GenerateLatexReport(path, model, projectName);
+        Phase(path, model);
+        GenerateLatexReport(path, model, projectName);
         Contour(path, initialValues);
 
         cout << "The result of the model has been saved " << model->modelName << " in: " << path << endl;
@@ -64,15 +64,15 @@ void Control::UseNewProject()
 
 void Control::UseExistingProject()
 {
-    // string projectName = GetProjectName();
-    // string path = "./data/" + projectName + "/";
-    // string pathConstants = path + "constants.txt";
-    // string pathInitialValues = path + "initialValues.txt";
-    // string pathModelType = path + "modelType.txt";
+    string projectName = GetProjectName();
+    string path = "./data/" + projectName + "/";
+    string pathConstants = path + "constants.txt";
+    string pathInitialValues = path + "initialValues.txt";
+    string pathModelType = path + "modelType.txt";
 
-    // vector<double> constants = LoadData(pathConstants);
-    // vector<double> initialValues = LoadData(pathInitialValues);
-    // ModelType modelType = (ModelType)GetInt(pathModelType);
+    vector<double> constants = LoadData(pathConstants);
+    vector<double> initialValues = LoadData(pathInitialValues);
+    ModelType modelType = (ModelType)GetInt(pathModelType);
 }
 
 void Control::DoSimulation(Model *model, vector<double> initialValues, string path)
@@ -96,7 +96,7 @@ void Control::DoSimulation(Model *model, vector<double> initialValues, string pa
 
     Images *images = new Images();
     images->GenerateBasicPlot(pathResult, pathGraph);
-    // images->GererateBasicGif(model, path, size, startTime, maxTime, population);
+    images->GererateBasicGif(model, path, size, startTime, maxTime, population);
 
     delete runge4;
     delete images;

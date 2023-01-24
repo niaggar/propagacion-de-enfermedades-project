@@ -147,7 +147,7 @@ void Contour(string projectRoute, vector<double> initialConditions)
     pclose(gnuplotPipe);
 
     // Para crear un video:
-    // ffmpeg -framerate 5 -pattern_type glob -i './sir3/contourImage/*.png' -c:v libx264 -vf fps=15 -pix_fmt yuv420p output-video2.mp4
+    // ffmpeg -framerate 5 -pattern_type glob -i './iquepues/contourImage/*.png' -c:v libx264 -vf fps=15 -pix_fmt yuv420p output-video2.mp4
 
 
     string command = "convert -resize 60% -delay 10 -loop 0 " + contourImageFolder + "/contour-*.gif " + projectRoute + "/basic.gif";
