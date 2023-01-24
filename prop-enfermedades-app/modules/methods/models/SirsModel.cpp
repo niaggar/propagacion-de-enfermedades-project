@@ -6,7 +6,7 @@ SirsModel::SirsModel()
     this->modelName = "SIRS";
     this->modelDescription = "SIRS model, which represents the spread of an infectious disease in a population considering births and deaths.";
     this->modelEquations = "S' = -(b * S * I) - (m * S) + (m * N) \\\\ I' = (b * S * I) - (v * I) - (m * I) \\\\ R' = (v * I) - (m * R)";
-    this->modelParameters = { "b", "m", "v" };
+    this->modelParameters = { "m", "b", "v" };
 }
 
 void SirsModel::SetParameters(vector<double> parameters)
