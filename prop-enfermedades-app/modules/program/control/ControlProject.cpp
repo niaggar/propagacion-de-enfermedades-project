@@ -95,7 +95,7 @@ void Control::DoSimulation(Model *model, vector<double> initialValues, string pa
     double maxTime = initialValues[4];
 
     Images *images = new Images();
-    // images->GenerateBasicPlot(pathResult, pathGraph);
+    images->GenerateBasicPlot(pathResult, pathGraph);
     // images->GererateBasicGif(model, path, size, startTime, maxTime, population);
 
     delete runge4;
