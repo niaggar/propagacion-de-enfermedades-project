@@ -6,7 +6,7 @@ SirsVacModel::SirsVacModel()
     this->modelName = "SIRSV";
     this->modelDescription = "SIRSV model, which represents the spread of an infectious disease in a population considering births and deaths, in addition to vaccination.";
     this->modelEquations = "S' = -(b * S * I) - (m * S) + (m * N) - (g1 * (m * N)) - (g2 * S) \\\\ I' = (b * S * I) - (v * I) - (m * I) \\\\ R' = (v * I) - (m * R) + g1 * (m * N)";
-    this->modelParameters = { "b", "m", "v", "g_1", "g_2" };
+    this->modelParameters = { "m", "b", "v", "g_1", "g_2" };
 }
 
 void SirsVacModel::SetParameters(vector<double> parameters)

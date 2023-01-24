@@ -70,7 +70,7 @@ void Control::GenerateLatexReport(string projectRoute, Model *modelsUsed, string
     report << "\\end{itemize}" << endl;
 
     report << "\\subsection*{Initial values}" << endl;
-    report << "The initial values used in the simulation are" << (N_0 < 1.4 ? "(The values are normalized respect to " + to_string(N) + " that is the total population)" : "") << ":" << endl;
+    report << "The initial values used in the simulation are " << (N_0 < 1.4 ? "(The values are normalized respect to " + to_string(N) + " that is the total population)" : "") << ":" << endl;
 
     report << "\\begin{itemize}" << endl;
     for (int i = 0; i < (int)initialValues.size(); i++)
