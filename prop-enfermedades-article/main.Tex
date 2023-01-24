@@ -428,30 +428,48 @@ En nuestro caso particular es de interés solucionar el sistema, para 4 parejas 
 %%%%%% SECCIONES DE DISEÑO Y DESARROLLO %%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Simulaciones y pruebas}
+\section{Simulaciones y pruebas}\label{simulaciones}
 
 %%Escribir las pruebas y simulaciones realizadas
 Se ha realizado el codigo en \texttt{C++} que permite simular el modelo \textit{SIR}, y se ha probado
 con los valores iniciales y parámetros mencionados en la sección \ref{valores inciales y parametros}, 
 en especial se toman 4 parejas de parámetros $b$ y $k$;
-\begin{equation}
+\begin{equation}\label{parametros}
 	\begin{split}
 		b= 0.5  \quad k = 1/3\\
 		b= 0.8 \quad k = 0.1\\
 		b= 1.2 \quad k = 0.4\\
-		b= 1.6 \quad k = 0.5\\
 		b= 2 \quad k = 0.6\\
 	\end{split}
 \end{equation}
 
 A continuación se presenta la simulación realizada, para 100 días con un tamaño de paso de $0.5$ días;
 %%IMAGENES DE SIMULACIONES CON LOS VALORES DE b Y k
-% \begin{figure}[h]
-% 	\centering
-% 	\includegraphics[width=0.5\textwidth]{simulacion1.png}
-% 	\caption{Simulación para $b=0.5$ y $k=1/3$}
-% 	\label{simulacion1}
-% \end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{SIR/graph-1-SIR}
+	\caption{Simulación para $b=0.5$ y $k=1/3$}
+	\label{simulacion1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{SIR/graph-2-SIR}
+	\caption{Simulación para $b=0.8$ y $k=0.1$}
+	\label{simulacion2}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{SIR/graph-3-SIR}
+	\caption{Simulación para $b=1.2$ y $k=0.4$}
+	\label{simulacion3}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{SIR/graph-4-SIR}
+	\caption{Simulación para $b=2$ y $k=0.6$}
+	\label{simulacion4}
+\end{figure}
+
 
 La idea ha ido más allá, y con la intención de explorar más el modelo bajo diferentes parámetros, se ha realizado
 una representación 3D en una grafica de contorno, en la que se puede observar el 
@@ -461,9 +479,68 @@ comportamiento de la población en función de los parámetros.
 Esto obliga realizar las graficas para un momento determinado, es decir el tiempo está fijo. Más sin embargo
 para observar el comportamiento de la población en función tanto de los parámetros como del tiempo, se 
 realiza una animación tipo \textit{gif}, en la que se puede observar el comportamiento a través del tiempo. 
-El \textit{gif} se puede observar en la siguiente dirección \href{https://github.com/niaggar/propagacion-de-enfermedades-project}{Propagacion
-de enfermedades} el cual se encuentra tambien dentro del repositorio \cite{GitHub}.
+El \textit{gif} se puede observar en la siguiente dirección \href{https://github.com/niaggar/propagacion-de-enfermedades-project}{Animación-3D} el cual se encuentra tambien dentro del repositorio \cite{GitHub}.
 
+Dentro del proyecto tambien se ha diseñado un codigo que genera de manera automática, reportes en \texttt{LaTeX}, en los que
+de manera sencilla, se presenta un informe con todos los resultados arrojados por el programa como el tipo
+de modelo utilizado, valores iniciales, y parámetros correspondientes, tiempo de ejecución del programa, y el tamaño de paso utilizado, además de la simulación realizada. 
+Tambien se incluye información importante como el  máximo de infectados según el modelo, este pico se calcula con otra 
+función tambien dentro del programa. En el caso de los 4 parámetros escogidos en particular [\ref{parametros}],
+se tienen los siguientes picos para la población infectada. \\
+%%Tabla que contiene los datos de los picos de la población infectada
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|r|r|l}
+	\cline{1-4}
+	b   & k   & \multicolumn{1}{c|}{Pico de infectados} & \multicolumn{1}{c|}{día} &  \\ \cline{1-4}
+	0.5 & 1/3 & 540,260                                 & 75                       &  \\ \cline{1-4}
+	0.8 & 0.1 & 4,944,894                               & 22                       &  \\ \cline{1-4}
+	1.2 & 0.4 & 2,450,935                               & 18                       &  \\ \cline{1-4}
+	2   & 0.6 & 2,800,676                               & 11                       &  \\ \cline{1-4}
+	\end{tabular}
+\end{table}
+
+
+Ha sido de interés explorar otras condiciones iniciales, y en especial nos preguntamos, que sucede si la población de infectados
+inicial es 0, claramente se habría de esperar que no se produzca ninguna epidemia, tal como se presenta a continuación;
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{SIR/graph-i0-SIR}
+	\caption{Simulación para $b=0.5$ y $k=1/3$ con $i_0=0$}
+	\label{simulacion5}
+\end{figure}
+	
+Por otra parte se ha graficado el diagrama de fases, para cada conjunto de poblaciones, en el que se puede observar 
+la variación de la población respecto al tiempo es decir la derivada de la población, contra la población. A continuación se presentan los diagramas de fases para
+los parametros escogidos en \ref{parametros}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{SIR/phase-1-SIR}
+	\caption{Diagrama de fases para $b=0.5$ y $k=1/3$}
+	\label{diagrama-fases}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{SIR/phase-2-SIR}
+	\caption{Diagrama de fases para $b=0.8$ y $k=0.1$}
+	\label{diagrama-fases}
+\end{figure}\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{SIR/phase-3-SIR}
+	\caption{Diagrama de fases para $b=1.2$ y $k=0.4$}
+	\label{diagrama-fases}
+\end{figure}\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{SIR/phase-4-SIR}
+	\caption{Diagrama de fases para $b=2$ y $k=0.6$}
+	\label{diagrama-fases}
+\end{figure}
+	
+Por ultimo, se ha creado una simulación tipo \textit{gif}, en el que se aprecian 4 panales, el de la 
+esquina superior izquierda contiene el diagrama de fase, y los otros tres paneles 
+contienen la población en función del tiempo para cada una de las poblaciones involucradas, 
+el gif se puede observar en la siguiente dirección \href{https://github.com/niaggar/propagacion-de-enfermedades-project}{gif-modelo SIR} 
+el cual se encuentra tambien dentro del repositorio \cite{GitHub}.
 
 \section{Acercamiento a otros modelos}
 %IMPLEMENTACION DEL CODIGO A OTROS MODELOS, SIRS Y SRIS CON VACUNACION
@@ -516,6 +593,31 @@ y se obtiene un modelo más sencilla, aunque mejor que el modelo \textit{SIR}, d
   \end{split}
 \end{equation}
 
+Estas nuevas ecuaciones se han añadido como un nuevo modelo dentro del codigo, y bajo las mismas condiciones iniciales
+consideradas en este trabajo, y bajo ahora estos dos conjuntos nuevos de parámetros, en los que $\mu$ es constante;
+\begin{equation}\label{parametrosSIRS}
+	\begin{split}
+		b = 0.8, \quad y \quad k = 0.1\\
+		b = 0.5, \quad  y \quad k = 0.2\\
+		\mu = 0.06\\
+	\end{split}
+\end{equation}
+Se ha realizado la simulación correspondiente, que se puede observara continuación;
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{SIRS/graph-1-SIRS}
+	\caption{Simulación del modelo SIRS, con $\mu = 0.06$ y $b = 0.8, k = 0.1$}
+	\label{fig:SIRS}
+  \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{SIRS/graph-2-SIRS}
+  \caption{Simulación del modelo SIRS, con $\mu = 0.06$ y $b = 0.5, k = 0.2$}
+  \label{fig:SIRS}
+\end{figure}
+
+%%INSERTAR GRAFICAS DEL MODELO SIRS
+
 \subsection{Modelo SIRS con vacunación}
 La importancia de estos modelos surge cuando es posible modelar el papel que tiene la vacunación, y existen diversos modelos
 que consiguen esto. En este caso se plantea seguir con una extensión del modelo \textit{SIRS} \ref{Modelo SIRS},
@@ -533,23 +635,59 @@ la vacunación \cite{SIRS-VAC} está dado por;
   \end{split}
 \end{equation}
 
+De nuevo estas nuevas ecuaciones se han añadido como un nuevo modelo dentro del codigo, y bajo las mismas condiciones iniciales,
+y manteniendo los parámetros \ref{parametrosSIRS} usados en el modelo \ref{Modelo SIRS}, pero añadiendo a $\gamma_1$ y $\gamma_2$ del siguiente modo;
+\begin{equation}
+	\begin{split}
+		\gamma_1 = 0.05, \quad y \quad \gamma_2 = 0.04\\
+	\end{split}
+\end{equation}
+
+%%INSERTAR GRAFICAS DEL MODELO SIRS-VAC
+A continuación se muestra las graficas, que se han obtenido con el modelo \textit{SIRS-VAC}, con los parámetros 
+y condiciones iniciales ya establecidas. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{SIRS/graph-1-SIRSV}
+	\caption{Simulación del modelo SIRS-VAC, con $\mu = 0.06, \gamma_1 = 0.05, \gamma_2 = 0.04$ y $b = 0.8, k = 0.1$}
+	\label{fig:SIRS-VAC}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{SIRS/graph-2-SIRSV}
+	\caption{Simulación del modelo SIRS-VAC, con $\mu = 0.06, \gamma_1 = 0.05, \gamma_2 = 0.04$ y $b = 0.5, k = 0.2$}
+	\label{fig:SIRS-VAC}
+\end{figure}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%% SECCIONES FINALES %%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
 %%SOLUCION A LAS PREGUNTAS PLANTEADAS 
-
-
-
-
-
-
-
+Tras todo el trabajo presentado, es importante rescatar los resultados obtenidos, ya que se presenta un codigo que permite,
+de manera sencilla para el usuario obtener un análisis de los modelos \textit{SIR} donde se pueda introducir de manera 
+particular los parámetros y valores iniciales a usar, e incluso implementar algún otro modelo que desee
+en nuestro caso únicamente se han implementado los modelos \textit{SIRS} y \textit{SIRS} con vacunación, pero se puede extender el codigo
+a cualquier otro modelo. Tambien es de resaltar las animaciones tipo \textit{GIF} realizadas, y en especial la animación de la evolución
+temporal, de los poblaciones en función de los parámetros, que en retrospectiva es una forma de visualizar un función de 3 variables, 
+una temporal, y dos más que son los parámetros $b$ y $k$, una tarea que no fue sencilla de realizar, pero que se ha conseguido con éxito,
+y que resulta muy interesante para el usuario, ya que permite ver de manera gráfica como evoluciona el modelo en función de los parámetros\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% CONCLUSIONES %%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusiones}
+A manera de discusión sobre los resultados obtenidos en la sección \ref{simulaciones}, es claro observar que en las graficas 
+de evolución de las poblaciones bajo diferentes parámetros, presenta en general una misma tendencia de comportamiento, solo
+que alcanzando diferentes picos, y con diferentes tiempos de evolución, pero en general se puede observar que la población, se comporta de manera similar.
+El pico más bajo se alcanza en la grafica \ref{simulacion1}, en este caso en particular, se puede observar que las poblaciones
+de susceptibles y recuperados, evolucionan de forma más lenta, y sin alcanzar los extremos, es decir si se observa las otras graficas 
+se puede observar que las poblaciones de susceptibles y recuperados, alcanzan picos mucho más altos, llegando los recuperados al $100\%$ de la población, y en menor tiempo, pero en este caso
+la población de recuperados y susceptibles parecen quedarse en un punto intermedio, y de igual manera la población de infectados,
+parece no desaparecer, manteniendo la epidemia.\\
+
+Por otra parte los demás modelos \textit{SIRS} y \textit{SIRS} con vacunación, presentan curvas más "suaves", y trayendo a colación
 
 
 
