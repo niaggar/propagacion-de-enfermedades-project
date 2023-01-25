@@ -129,7 +129,7 @@ void Contour(string projectRoute, vector<double> initialConditions)
         fprintf(gnuplotPipe, "set ylabel \"Parámetro k\"\n");
         fprintf(gnuplotPipe, "set zlabel \"Poblacion\"\n");
         // Set title to the plot in the format "t = 0.000000"
-        fprintf(gnuplotPipe, "set title \"Tiepo transcurrido t = %i dia\"\n", i);
+        fprintf(gnuplotPipe, "set title \"Tiempo transcurrido t = %i dia\"\n", i);
 
         fprintf(gnuplotPipe, "set xrange [%f:%f]\n", bmin, bmax);
         fprintf(gnuplotPipe, "set yrange [%f:%f]\n", kmin, kmax);

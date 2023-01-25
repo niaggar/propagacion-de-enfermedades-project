@@ -121,7 +121,7 @@ void Images::GereratePhaseGif(Model * model, string projectRoute, int size, doub
         fprintf(gnuplotPipe, "set grid\n");
         fprintf(gnuplotPipe, "set multiplot layout 2,2\n");
         fprintf(gnuplotPipe, "set xrange [0:%f]\n", maxPopulation);
-        fprintf(gnuplotPipe, "set yrange [%f:%f]\n", -0.1, 0.1);
+        fprintf(gnuplotPipe, "set yrange [%f:%f]\n", -0.32, 0.25);
         fprintf(gnuplotPipe, "plot \"%s\" %s i 0 u 1:2 w l lw 4 lc \"#17bebb\" title \"Suceptibles\", \"%s\" %s i 0 u 3:4 w l lw 4 lc \"#2e282a\" title \"Infected\", \"%s\" %s i 0 u 5:6 w l lw 4 lc \"#cd5334\" title \"Recovered\"\n", phaseRoute.c_str(), range.c_str(), phaseRoute.c_str(), range.c_str(), phaseRoute.c_str(), range.c_str());
         fprintf(gnuplotPipe, "set title \"Suceptibles\"\n");
         fprintf(gnuplotPipe, "set xlabel \"Tiempo (días)\"\n");

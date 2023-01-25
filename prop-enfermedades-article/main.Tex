@@ -650,13 +650,13 @@ y condiciones iniciales ya establecidas.
 	\centering
 	\includegraphics[width=0.5\textwidth]{SIRS/graph-1-SIRSV}
 	\caption{Simulación del modelo SIRS-VAC, con $\mu = 0.06, \gamma_1 = 0.05, \gamma_2 = 0.04$ y $b = 0.8, k = 0.1$}
-	\label{fig:SIRS-VAC}
+	\label{fig:SIRS-VAC1}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{SIRS/graph-2-SIRSV}
 	\caption{Simulación del modelo SIRS-VAC, con $\mu = 0.06, \gamma_1 = 0.05, \gamma_2 = 0.04$ y $b = 0.5, k = 0.2$}
-	\label{fig:SIRS-VAC}
+	\label{fig:SIRS-VAC2}
 \end{figure}
 
 
@@ -683,13 +683,15 @@ de evolución de las poblaciones bajo diferentes parámetros, presenta en genera
 que alcanzando diferentes picos, y con diferentes tiempos de evolución, pero en general se puede observar que la población, se comporta de manera similar.
 El pico más bajo se alcanza en la grafica \ref{simulacion1}, en este caso en particular, se puede observar que las poblaciones
 de susceptibles y recuperados, evolucionan de forma más lenta, y sin alcanzar los extremos, es decir si se observa las otras graficas 
-se puede observar que las poblaciones de susceptibles y recuperados, alcanzan picos mucho más altos, llegando los recuperados al $100\%$ de la población, y en menor tiempo, pero en este caso
-la población de recuperados y susceptibles parecen quedarse en un punto intermedio, y de igual manera la población de infectados,
-parece no desaparecer, manteniendo la epidemia.\\
+se puede notar que las poblaciones de susceptibles y recuperados, alcanzan picos mucho más altos, llegando los recuperados al $100\%$ de la población, y en menor tiempo, pero en este caso
+la población de recuperados y susceptibles parecen quedarse en un punto intermedio.\\
 
-Por otra parte los demás modelos \textit{SIRS} y \textit{SIRS} con vacunación, presentan curvas más "suaves", y trayendo a colación
+Por otra parte los demás modelos \textit{SIRS} y \textit{SIRS} con vacunación, presentan curvas más "suaves", y con picos más bajos en genera.
+Un caso particular es cuando el modelo \textit{SIRS} con vacunación, que bajo las mismas condiciones del pico más bajo del modelo \textit{SIR},
+se consigue la grafica \ref{fig:SIRS-VAC2}, que tambien causa que las poblaciones de susceptibles y removidos, se queden en un punto intermedio,
+y en este caso por efecto de la vacunación la población de infectados no crece en absoluto. 
 
-
+Por ultimo y para concluir, 
 
 \ifCLASSOPTIONcaptionsoff
 	\newpage
