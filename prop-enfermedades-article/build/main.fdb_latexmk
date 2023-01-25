@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1674624180 "/home/andresvafo/Fisica_computacional/propagacion-de-enfermedades-project/prop-enfermedades-article/main.Tex" "build/main.pdf" "main" 1674624183
+["pdflatex"] 1674688280 "/home/andresvafo/Fisica_computacional/propagacion-de-enfermedades-project/prop-enfermedades-article/main.Tex" "build/main.pdf" "main" 1674688283
   "/etc/texmf/web2c/texmf.cnf" 1673810765 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/andresvafo/Fisica_computacional/propagacion-de-enfermedades-project/prop-enfermedades-article/main.Tex" 1674624177 37709 933cef6db8bf75a35b7bc0c64a7144e8 ""
+  "/home/andresvafo/Fisica_computacional/propagacion-de-enfermedades-project/prop-enfermedades-article/main.Tex" 1674688280 37721 18cec5e1d4bd8c03d50c38a96c22b523 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrb7t.tfm" 1136768653 960 4ab65358b8406f30ef5496c8c096d22b ""
@@ -239,9 +239,9 @@
   "Figs//SIRS/graph-2-SIRSV.png" 1674590391 51133 b5beef49509adc5ca2ec2fee3267077d ""
   "Figs/logo UV.png" 1673820387 13602 0b1becc01cf0cb5fe329b410da816239 ""
   "IEEEtran.cls" 1673821025 284881 bd2aa1d1434fa1f98099adaf2868a41f ""
-  "build/main.aux" 1674624183 8183 33599abbd09a4e30550773ac2c605899 "pdflatex"
-  "build/main.out" 1674624183 2565 12766f3b4c12be6fb8bb3b0b455f3671 "pdflatex"
-  "main.Tex" 1674624177 37709 933cef6db8bf75a35b7bc0c64a7144e8 ""
+  "build/main.aux" 1674688283 8183 33599abbd09a4e30550773ac2c605899 "pdflatex"
+  "build/main.out" 1674688283 2565 12766f3b4c12be6fb8bb3b0b455f3671 "pdflatex"
+  "main.Tex" 1674688280 37721 18cec5e1d4bd8c03d50c38a96c22b523 ""
   (generated)
   "build/main.aux"
   "build/main.log"
