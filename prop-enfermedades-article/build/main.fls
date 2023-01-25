@@ -1125,6 +1125,14 @@ OUTPUT build/main.pdf
 INPUT build/main.out
 INPUT build/main.out
 OUTPUT build/main.out
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrbo7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrro7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmrc7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
@@ -1151,11 +1159,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/latex-fonts/lasy7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/latex-fonts/lasy5.tfm
-INPUT ./Figs//Modelos.png
-INPUT ./Figs//Modelos.png
-INPUT Figs//Modelos.png
-INPUT ./Figs//Modelos.png
-INPUT ./Figs//Modelos.png
 INPUT ./Figs/logo UV.png
 INPUT ./Figs/logo UV.png
 INPUT Figs/logo UV.png
@@ -1174,28 +1177,32 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmbi7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmbi8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/courier/pcrbo7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrbo8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/courier/pcrro7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrro8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmrc7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmbi7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmbi8r.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT ./Figs//Modelos.png
+INPUT ./Figs//Modelos.png
+INPUT Figs//Modelos.png
+INPUT ./Figs//Modelos.png
+INPUT ./Figs//Modelos.png
 INPUT ./Figs/logo UV.png
 INPUT ./Figs/logo UV.png
 INPUT Figs/logo UV.png
 INPUT ./Figs/logo UV.png
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm
 INPUT ./Figs//SIR/graph-1-SIR.png
 INPUT Figs//SIR/graph-1-SIR.png
 INPUT ./Figs//SIR/graph-1-SIR.png
@@ -1222,16 +1229,16 @@ INPUT ./Figs//SIR/graph-3-SIR.png
 INPUT Figs//SIR/graph-3-SIR.png
 INPUT ./Figs//SIR/graph-3-SIR.png
 INPUT ./Figs//SIR/graph-3-SIR.png
-INPUT ./Figs//SIR/graph-4-SIR.png
-INPUT Figs//SIR/graph-4-SIR.png
-INPUT ./Figs//SIR/graph-4-SIR.png
-INPUT ./Figs//SIR/graph-4-SIR.png
 INPUT ./Figs/logo UV.png
 INPUT ./Figs/logo UV.png
 INPUT Figs/logo UV.png
 INPUT ./Figs/logo UV.png
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
+INPUT ./Figs//SIR/graph-4-SIR.png
+INPUT Figs//SIR/graph-4-SIR.png
+INPUT ./Figs//SIR/graph-4-SIR.png
+INPUT ./Figs//SIR/graph-4-SIR.png
 INPUT ./Figs//SIR/graph-i0-SIR.png
 INPUT Figs//SIR/graph-i0-SIR.png
 INPUT ./Figs//SIR/graph-i0-SIR.png
@@ -1240,14 +1247,14 @@ INPUT ./Figs//SIR/phase-1-SIR.png
 INPUT Figs//SIR/phase-1-SIR.png
 INPUT ./Figs//SIR/phase-1-SIR.png
 INPUT ./Figs//SIR/phase-1-SIR.png
-INPUT ./Figs//SIR/phase-2-SIR.png
-INPUT Figs//SIR/phase-2-SIR.png
-INPUT ./Figs//SIR/phase-2-SIR.png
-INPUT ./Figs//SIR/phase-2-SIR.png
 INPUT ./Figs/logo UV.png
 INPUT ./Figs/logo UV.png
 INPUT Figs/logo UV.png
 INPUT ./Figs/logo UV.png
+INPUT ./Figs//SIR/phase-2-SIR.png
+INPUT Figs//SIR/phase-2-SIR.png
+INPUT ./Figs//SIR/phase-2-SIR.png
+INPUT ./Figs//SIR/phase-2-SIR.png
 INPUT ./Figs//SIR/phase-3-SIR.png
 INPUT Figs//SIR/phase-3-SIR.png
 INPUT ./Figs//SIR/phase-3-SIR.png
@@ -1280,6 +1287,10 @@ INPUT ./Figs//SIRS/graph-2-SIRSV.png
 INPUT Figs//SIRS/graph-2-SIRSV.png
 INPUT ./Figs//SIRS/graph-2-SIRSV.png
 INPUT ./Figs//SIRS/graph-2-SIRSV.png
+INPUT ./Figs/logo UV.png
+INPUT ./Figs/logo UV.png
+INPUT Figs/logo UV.png
+INPUT ./Figs/logo UV.png
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
@@ -1290,10 +1301,6 @@ INPUT ./Figs/logo UV.png
 INPUT Figs/logo UV.png
 INPUT ./Figs/logo UV.png
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
-INPUT ./Figs/logo UV.png
-INPUT ./Figs/logo UV.png
-INPUT Figs/logo UV.png
-INPUT ./Figs/logo UV.png
 INPUT build/main.aux
 INPUT build/main.out
 INPUT build/main.out
@@ -1307,7 +1314,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrbo8a.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
