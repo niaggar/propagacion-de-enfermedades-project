@@ -6,7 +6,7 @@
 
 ## Integrantes
 - [x] 1. Nicolas Aguilera Garcia
-- [x] 2. Andreas Felipe Valencia
+- [x] 2. Andres Felipe Valencia
 
 ## Descripción
 Proyecto que busca simular la propagación de enfermedades en una población, utilizando una solución numérica a las ecuaciones diferenciales dadas por el modelo SIR, SIRS y SIRS-VAC.

@@ -139,7 +139,7 @@
 	Todo el codigo, se puede encontrar en el repositorio de \emph{GitHub}
 	[ver \href{https://github.com/niaggar/propagacion-de-enfermedades-project}{Propagacion
 	de enfermedades}], tambien se ha realizado un video explicativo sobre todo el trabajo,
-	que se puede encontrar en el siguiente enlace: \href{https://youtu.be/1Z4Z4Z4Z4Z4}{Video
+	que se puede encontrar en el siguiente enlace: \href{https://drive.google.com/file/d/1-Wrr3fB-JRRgwQq_m59-RsKbWqgoxFI4/view?usp=share_link}{Video
 	explicativo}.
 \end{abstract}
 % En el resumen no se recomienda colocar citaciones bibliográficas.
@@ -155,14 +155,14 @@ simulación, Runge-Kutta, modelos de compartimiento, solución numérica.
 %\IEEEpeerreviewmaketitle
 
 \begin{abstracteee}
-	Mathematical models have been of great importance in Epidemiology since they allow
+	--Mathematical models have been of great importance in Epidemiology since they allow
 	to predict the behavior of infectious diseases. This work develops a code in \texttt{\textit{C++}}
 	that simulates the propagation of a disease in a population. The numerical solution
 	to the SIR model is developed and other variants of the model are explored, as well 
 	as the variation of parameters to contrast the results. All the code can be found in
 	the \emph{GitHub} repository [see \href{https://github.com/niaggar/propagacion-de-enfermedades-project}{Propagacion
 	de enfermedades}], as well as a explanatory video
-	that can be found at the following link: \href{https://youtu.be/1Z4Z4Z4Z4Z4}{Video Explanatory}.
+	that can be found at the following link: \href{https://drive.google.com/file/d/1-Wrr3fB-JRRgwQq_m59-RsKbWqgoxFI4/view?usp=share_link}{Video Explanatory}.
 \end{abstracteee}
 % En el resumen no se recomienda colocar citaciones bibliográficas.
 
@@ -170,7 +170,7 @@ simulación, Runge-Kutta, modelos de compartimiento, solución numérica.
 %%% PALABRAS CLAVE %%%
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{IEEEkeywordsa}
-	Epidemiology, SIR, github, epidemiological models, disease spread, disease spread,
+	--Epidemiology, SIR, github, epidemiological models, disease spread, disease spread,
 	simulation, Runge-Kutta, compartment models, numerical solution.
 \end{IEEEkeywordsa}
 
@@ -400,7 +400,7 @@ los siguientes valores iniciales;
 	\end{split}
 \end{equation}
 
-Pero dado que se usara la relación \ref{poblaciones}, estas condiciones iniciales corresponden a;
+Pero dado que se usará la relación \ref{poblaciones}, estas condiciones iniciales corresponden a;
 \begin{equation}
 	\begin{split}
 		s(0) = 0. 99999873,\\
@@ -425,7 +425,7 @@ un rango de dominio para los parámetros, en los cuales el modelo cobra sentido.
 el análisis cualitativo permite dar soluciones consistentes con el problema. En el capitulo 11
 del libro \textit{Modelos de la propagación de enfermedades infecciosas} \cite{Modelos de propagacion
 }, se aborda a profundidad la estimación de los parámetros, en los que se concluye que;
-el factor $b$ de tasa de contactos, ronda aproximadamente entre valores $0,00001$ y $1$, mientras que la tasa de remoción
+el factor $b$ de tasa de contactos, ronda aproximadamente entre valores $0,00001$ y $2$, mientras que la tasa de remoción
 $k$, debe satisfacer que su inverso $1/k$ este cerca del $30\%$ de las personas infectadas inicialmente.\\
 
 El estudiar el comportamiento de la población, tambien proporciona información más precisa para
@@ -488,7 +488,7 @@ A continuación se presenta la simulación realizada, para 100 días con un tama
 	\label{simulacion4}
 \end{figure}
 
-
+\newpage
 La idea ha ido más allá, y con la intención de explorar más el modelo bajo diferentes parámetros, se ha realizado
 una representación 3D en una grafica de contorno, en la que se puede observar el 
 comportamiento de la población en función de los parámetros.
@@ -601,7 +601,7 @@ a la población de susceptibles.\\
 Pero por simplicidad hemos dicho que se mantendrá la suposición \ref{suposicion}, es decir la población
 total será constante, por lo que necesariamente $B = \mu N$, y dado que las variables están normalizadas
 $N=1$. Haciendo esta consideración, solo añadimos un nuevo parámetro, 
-y se obtiene un modelo más sencilla, aunque mejor que el modelo \textit{SIR}, del siguiente modo;
+y se obtiene un modelo más sencillo, aunque mejor que el modelo \textit{SIR}, del siguiente modo;
 
 \begin{equation}\label{SIRS}
   \begin{split}
@@ -711,11 +711,11 @@ y en este caso por efecto de la vacunación la población de infectados no crece
 
 Por ultimo y para concluir, es de resaltar la importancia, que tiene la simulación dentro de la epidemiología, y en especial
 el modelo \textit{SIR} y todas sus variantes, los modelos matemáticos permiten predecir la posible distribución global de la
-enfermedad, el número de personas afectadas y el porcentaje de mortalidad. TRmbién pueden ayudar a seleccionar
+enfermedad, el número de personas afectadas y el porcentaje de mortalidad. También pueden ayudar a seleccionar
 los mejores métodos para identificar, controlar y tratar una enfermedad específica. Además, los modelos se utilizan ampliamente para evaluar 
 los datos de vigilancia de la enfermedad y ver los efectos potenciales de diferentes políticas de salud pública ya que permiten estudiar 
 el comportamiento esperado de una enfermedad, y de esta manera poder tomar medidas preventivas, y así controlar la propagación de una enfermedad
-bajo vacunación, o restrincciones de cuarentena. 
+bajo vacunación, o restricciones de cuarentena. 
 
 \ifCLASSOPTIONcaptionsoff
 	\newpage
